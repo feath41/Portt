@@ -1,0 +1,17 @@
+@layer base {
+  html, body {
+    margin: 0;
+    padding: 0;
+    background-color: #0b0c10;
+    color: #e2e8f0;
+  }
+  body {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    overscroll-behavior: none;
+    scroll-behavior: smooth;
+  }
+}
+::-webkit-scrollbar { display: none; }
+.font-syne { font-family: 'Syne', sans-serif; }
+.font-grotesk { font-family: 'Space Grotesk', sans-serif; }
+.font-mono { font-family: 'JetBrains Mono', monospace; }

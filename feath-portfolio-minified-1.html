@@ -1,0 +1,366 @@
+<!DOCTYPE html><html class="dark" lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600&amp;family=Inter:wght@400;500;600&amp;family=JetBrains+Mono:wght@400;500;700&amp;family=Space+Grotesk:wght@500;600;700&amp;display=swap" rel="stylesheet"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" rel="stylesheet"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base { html, body { margin: 0; padding: 0; } body { overscroll-behavior: none; } main > :first-child { margin-top: 0 !important; } main > :last-child { margin-bottom: 0 !important; } } ::-webkit-scrollbar { display: none; } .bg-blueprint-grid { background-image: radial-gradient(rgba(125, 211, 252, 0.15) 1px, transparent 0); background-size: 24px 24px; }
+/* Scroll Reveal Styles */
+.reveal-item {
+opacity: 0;
+transform: translateY(20px);
+transition: opacity 350ms cubic-bezier(0.16, 1, 0.3, 1), transform 350ms cubic-bezier(0.16, 1, 0.3, 1);
+will-change: opacity, transform;
+transition-delay: calc(var(--delay-index, 0) * 80ms);
+}
+.reveal-item.revealed {
+opacity: 1;
+transform: translateY(0);
+}
+@media (prefers-reduced-motion: reduce) {
+.reveal-item {
+opacity: 1 !important;
+transform: none !important;
+transition: none !important;
+}
+}
+/* Terminal Typewriter Cursor */
+.terminal-cursor {
+display: inline-block;
+width: 8px;
+height: 15px;
+background-color: #E0F2FE;
+vertical-align: -2px;
+margin-left: 2px;
+animation: termBlink 1s infinite steps(1, start);
+}
+@keyframes termBlink {
+0%, 100% { opacity: 1; }
+50% { opacity: 0; }
+}
+</style><script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script><script id="tailwind-config">
+tailwind.config = {
+darkMode: "class",
+theme: {
+extend: {
+"colors": {
+"navy": {
+"900": "#0F172A",
+"800": "#1E293B",
+"700": "#334155",
+"600": "#475569"
+},
+"sky": {
+"100": "#E0F2FE",
+"200": "#BAE6FD",
+"300": "#7DD3FC",
+"400": "#38BDF8"
+},
+"amber": {
+"500": "#F59E0B",
+"600": "#D97706",
+"700": "#B45309"
+}
+},
+"borderRadius": {
+"DEFAULT": "0px",
+"lg": "0px",
+"xl": "0px",
+"full": "9999px"
+},
+"spacing": {
+"space-xl": "3rem",
+"margin": "1rem",
+"space-md": "1rem",
+"space-sm": "0.5rem",
+"gutter-desktop": "1.5rem",
+"space-xs": "0.25rem",
+"margin-tablet": "2rem",
+"margin-desktop": "3rem",
+"space-lg": "1.5rem",
+"gutter": "1rem"
+},
+"fontFamily": {
+"headline-sm": ["Space Grotesk"],
+"label-md": ["JetBrains Mono"],
+"label-sm": ["JetBrains Mono"],
+"body-md": ["Geist", "Inter"],
+"headline-lg": ["Space Grotesk"],
+"headline-md": ["Space Grotesk"],
+"body-lg": ["Geist", "Inter"],
+"headline-xl": ["Space Grotesk"],
+"body-sm": ["Geist", "Inter"],
+"headline-xl-mobile": ["Space Grotesk"],
+"label-lg": ["JetBrains Mono"],
+"headline-lg-mobile": ["Space Grotesk"]
+},
+"fontSize": {
+"headline-sm": ["20px", { "lineHeight": "24px", "letterSpacing": "-0.01em", "fontWeight": "600" }],
+"label-md": ["12px", { "lineHeight": "16px", "letterSpacing": "0.04em", "fontWeight": "500" }],
+"label-sm": ["10px", { "lineHeight": "14px", "letterSpacing": "0.06em", "fontWeight": "500" }],
+"body-md": ["14px", { "lineHeight": "22px", "letterSpacing": "0em", "fontWeight": "400" }],
+"headline-lg": ["40px", { "lineHeight": "44px", "letterSpacing": "-0.03em", "fontWeight": "600" }],
+"headline-md": ["28px", { "lineHeight": "32px", "letterSpacing": "-0.02em", "fontWeight": "600" }],
+"body-lg": ["16px", { "lineHeight": "26px", "letterSpacing": "-0.01em", "fontWeight": "400" }],
+"headline-xl": ["56px", { "lineHeight": "60px", "letterSpacing": "-0.04em", "fontWeight": "700" }],
+"body-sm": ["12px", { "lineHeight": "18px", "letterSpacing": "0.01em", "fontWeight": "400" }],
+"headline-xl-mobile": ["32px", { "lineHeight": "36px", "letterSpacing": "-0.03em", "fontWeight": "700" }],
+"label-lg": ["13px", { "lineHeight": "18px", "letterSpacing": "0.02em", "fontWeight": "500" }],
+"headline-lg-mobile": ["26px", { "lineHeight": "30px", "letterSpacing": "-0.02em", "fontWeight": "600" }]
+}
+}
+}
+};
+</script></head><body class="bg-[#0F172A] font-body-md text-body-md text-[#E0F2FE] antialiased"><header class="fixed top-0 left-0 w-full z-50 bg-[#0F172A] border-b border-[#E0F2FE]/20"><div class="h-16 max-w-[1440px] mx-auto px-margin md:px-margin-tablet lg:px-margin-desktop flex items-center justify-between gap-gutter"><div class="flex items-center gap-gutter"><a class="flex items-center gap-space-sm group" data-path="about" href="#"><div class="w-8 h-8 bg-[#1E293B] border border-[#E0F2FE]/30 flex items-center justify-center text-[#E0F2FE] font-label-md text-label-md font-bold group-hover:border-[#D97706] group-hover:text-[#D97706] transition-colors"><img alt="Feath Avatar" class="w-full h-full object-cover rounded-sm" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCnyfwpA_DkQRI1DDgdBcYtX9oBoUGGS9yF_9XVFvvxNNujUiqGAX-9DOyROHMbxle48Pp7dih1geJg3Wpswkp-zSq1QGOhMSKSo5zb9LFrPnbHH79ukBgsTIS8d_sRItM4EQWVtAaLvReaDRbJT6O8rJWr2GRAwpr_JbZRmvGmboLG1wx1uSiR7rsecptdYFh9xJjkuC-9WoFd1qeriXlck-wqezMqx3nH0RmUFuDmiu7ZPxlWDcKlVMi1yIuweKvbLw"/></div><div class="flex items-baseline font-headline-sm text-headline-sm text-[#E0F2FE] tracking-tight font-bold group-hover:text-white transition-colors">Feath<span class="w-1.5 h-1.5 bg-[#E0F2FE] inline-block ml-0.5 group-hover:bg-white transition-colors"></span></div></a><div class="hidden xl:inline-flex items-center gap-space-xs px-space-sm py-1 border border-[#E0F2FE]/20 bg-[#1E293B] text-[#94A3B8] font-label-sm text-label-sm"><span class="inline-block w-1.5 h-1.5 rounded-full bg-[#D97706] animate-pulse"></span><span>AVAILABLE FOR WORK [2026]</span></div></div><nav class="hidden lg:flex items-center gap-space-sm" data-active-classes="bg-[#1E293B] text-[#E0F2FE] font-bold"><a aria-current="page" class="px-space-sm py-1 transition-colors uppercase tracking-wider bg-[#1E293B] text-[#E0F2FE] border border-[#E0F2FE]/20 font-bold" data-path="about" href="#">About</a><a class="px-space-sm py-1 text-[#94A3B8] hover:text-[#E0F2FE] hover:bg-[#1E293B] transition-colors font-label-md text-label-md uppercase tracking-wider" data-path="skills" href="#skills">Skills</a><a class="px-space-sm py-1 text-[#94A3B8] hover:text-[#E0F2FE] hover:bg-[#1E293B] transition-colors font-label-md text-label-md uppercase tracking-wider" data-path="stats" href="#stats">Stats</a><a class="px-space-sm py-1 text-[#94A3B8] hover:text-[#E0F2FE] hover:bg-[#1E293B] transition-colors font-label-md text-label-md uppercase tracking-wider" data-path="projects" href="#projects">Projects</a><a class="px-space-sm py-1 text-[#94A3B8] hover:text-[#E0F2FE] hover:bg-[#1E293B] transition-colors font-label-md text-label-md uppercase tracking-wider" data-path="terminal" href="#contact">Contact</a></nav><div class="flex items-center gap-gutter"><a class="bg-[#1E293B] text-[#E0F2FE] hover:bg-[#D97706] hover:text-[#0F172A] px-space-md py-space-sm font-label-md text-label-md uppercase tracking-widest border border-[#E0F2FE]/25 hover:border-[#D97706] transition-all flex items-center gap-space-xs" href="#terminal"><span class="material-symbols-outlined text-[14px]">terminal</span><span>$ _EXEC</span></a><div class="w-8 h-8 rounded-full bg-[#0F172A] border border-[#E0F2FE]/30 flex items-center justify-center text-[#E0F2FE] font-mono text-[13px] font-bold select-none"><img alt="Feath Avatar" class="w-full h-full object-cover rounded-full border border-slate-700/60" src="https://lh3.googleusercontent.com/aida-public/AB6AXuArJm2pC9nFVXmpmylF2MeIKQ_PuOobo6fpfznBh1q0Io13oWmq0IwXucFKlUscaM9-6WAGeRCnHexoouGEKRdyU0e2w_kkL9F0kKSQtBreIKi2AKrRbgmWYcqwHsjmSYV99NRUImxDf-kbj5T0sSZwjQ4DU4zPGhJ3-dTNgPOlME-rblfMIC6LF5Tzlo3FD60T4CgUtlZ8iFeV6dL5aubr0YOZ-cFYnLZV4ko3x40VAhnBmrz5Cq1s-5MlchDY2G-OAw"/></div></div></div></header><main class="w-full pt-16 bg-[#0F172A] min-h-screen"><div class="flex flex-col w-full"><section class="w-full bg-[#E0F2FE] text-[#0F172A] border-b border-[#0F172A]/20 selection:bg-[#0F172A] selection:text-[#E0F2FE]" id="about"><div class="max-w-[1440px] mx-auto px-margin md:px-margin-tablet lg:px-margin-desktop py-space-xl lg:py-24"><div class="reveal-item flex flex-wrap items-center justify-between gap-space-sm pb-space-md border-b border-[#0F172A]/15 font-label-sm text-label-sm text-[#334155]"><div class="flex items-center gap-space-sm"><span class="font-bold tracking-widest text-[#0F172A] uppercase">01 — HERO // KERNEL_INIT</span><span class="text-[#475569]">—</span><span class="tracking-widest uppercase text-[#334155]">LOC: ARCH_ENV // [0x00_SYS]</span></div><div class="inline-flex items-center gap-space-xs px-2.5 py-1 border border-[#0F172A]/15 bg-[#E0F2FE]/80 text-[#0F172A] font-label-sm text-label-sm"><span class="inline-block w-1.5 h-1.5 rounded-full bg-[#D97706] animate-pulse"></span><span class="font-semibold">[● AVAILABLE FOR WORK // 2026]</span></div></div><div class="pt-space-xl grid grid-cols-1 lg:grid-cols-12 gap-gutter-desktop items-start"><div class="lg:col-span-8 flex flex-col gap-space-md reveal-item" style="--delay-index: 1;"><div class="flex flex-col"><span class="font-label-md text-label-md uppercase tracking-widest text-[#475569] pb-space-xs font-semibold">// CLI-FIRST DEVELOPER &amp; SYSTEMS BUILDER</span><h1 class="font-headline-xl text-headline-xl lg:text-[72px] lg:leading-[76px] tracking-tighter text-[#0F172A] font-bold">Feath<span class="text-[#0F172A]">.</span></h1><p class="font-headline-md text-headline-md text-[#1E293B] font-medium tracking-tight mt-1">CLI-First Systems &amp; Script/LUAU Management</p></div><p class="font-body-lg text-body-lg text-[#334155] max-w-2xl pt-2 leading-relaxed">I build <strong class="font-semibold text-[#0F172A]">custom CLI tooling</strong>, automated vulnerability trackers, and <strong class="font-semibold text-[#0F172A]">client-side anti-tamper runtimes</strong>. I write my own CVE check scripts and proactively break my own web apps and admin consoles before deployment. Direct code, zero filler.</p><div class="flex flex-wrap items-center gap-space-md pt-space-sm"><a class="px-6 py-3.5 bg-[#0F172A] text-[#E0F2FE] hover:bg-[#1E293B] hover:text-[#7DD3FC] transition-all font-label-md text-label-md uppercase tracking-widest flex items-center gap-2 border border-[#0F172A] shadow-[2px_2px_0px_0px_rgba(15,23,42,0.6)]" href="#projects"><span>EXPLORE PROJECTS</span><span class="text-[14px]">↘</span></a><a class="px-6 py-3.5 bg-transparent text-[#D97706] hover:bg-[#D97706]/10 transition-all font-label-md text-label-md uppercase tracking-widest flex items-center gap-2 border border-[#D97706] font-semibold" href="#contact"><span class="text-[#D97706]">$</span><span>TERMINAL CLI // CONTACT</span></a></div><div class="pt-space-md flex flex-wrap items-center gap-x-3 gap-y-1 font-label-sm text-label-sm text-[#475569] uppercase tracking-wider font-medium"><span>PYTHON</span><span>•</span><span>LUAU</span><span>•</span><span>LUA</span><span>•</span><span>REVERSE ENGINEERING</span><span>•</span><span>MEMORY DEFENSE</span></div></div><div class="lg:col-span-4 border border-[#0F172A]/15 bg-[#BAE6FD]/30 p-space-md flex flex-col gap-space-sm reveal-item" style="--delay-index: 2;"><div class="flex items-center justify-between border-b border-[#0F172A]/15 pb-space-xs font-label-sm text-label-sm text-[#475569]"><span>DEVELOPER_SPEC</span><span class="text-[#0F172A] font-bold">[RUN_MODE: CLI_NATIVE]</span></div><div class="grid grid-cols-1 gap-space-xs font-label-sm text-label-sm pt-space-xs divide-y divide-[#0F172A]/10"><div class="pt-1 flex justify-between items-center"><span class="text-[#475569]">PRIMARY_STACK</span><span class="text-[#0F172A] font-bold">LUAU // PYTHON // SHELL</span></div><div class="pt-1 flex justify-between items-center"><span class="text-[#475569]">TOOLING</span><span class="text-[#0F172A] font-bold">CUSTOM CVE &amp; AUTOMATIONS</span></div><div class="pt-1 flex justify-between items-center"><span class="text-[#475569]">TESTING</span><span class="text-[#0F172A] font-bold">PROACTIVE PENTEST &amp; AUDIT</span></div><div class="pt-1 flex justify-between items-center"><span class="text-[#475569]">EXEC_ENV</span><span class="text-[#0F172A] font-bold">HEADLESS // LINUX // ROBLOX</span></div></div><div class="border-t border-[#0F172A]/15 pt-space-xs font-label-sm text-label-sm text-[#475569] flex items-center justify-between"><span>ENGAGEMENT</span><span class="text-[#0F172A] font-bold">2026 CONTRACTS OPEN</span></div></div></div><div class="mt-space-xl border border-[#E0F2FE]/20 bg-[#0F172A] text-[#E0F2FE] shadow-[4px_4px_0px_0px_rgba(15,23,42,0.4)] overflow-hidden reveal-item" id="terminal" style="--delay-index: 3;"><div class="h-10 bg-[#1E293B] border-b border-[#E0F2FE]/15 px-space-md flex items-center justify-between"><div class="flex items-center gap-space-sm"><div class="flex items-center gap-1.5"><span class="w-2.5 h-2.5 rounded-full bg-[#E0F2FE]/30"></span><span class="w-2.5 h-2.5 rounded-full bg-[#E0F2FE]/30"></span><span class="w-2.5 h-2.5 rounded-full bg-[#E0F2FE]/30"></span></div><span class="font-label-sm text-label-sm text-[#94A3B8] uppercase tracking-wider pl-2">feath@workstation: ~ — zsh</span></div><div class="font-label-sm text-label-sm text-[#94A3B8] flex items-center gap-3"><span>TTY: /dev/pts/1</span><span>80x24</span></div></div><div class="p-space-lg font-label-md text-label-md space-y-4"><div class="space-y-4" id="terminal-lines-container"><div class="space-y-1"><div class="flex items-center gap-2 text-[#7DD3FC]"><span class="text-[#94A3B8]">feath@workstation:~$</span><span class="font-bold text-[#E0F2FE]">./cve-tracker.py --scan ./targets</span></div><div class="text-[#E0F2FE] pl-4 border-l border-[#E0F2FE]/20 font-mono text-[13px]"><span class="text-[#D97706] font-bold">[OK]</span> Custom CVE scanner: 0 unpatched vectors identified in local dependencies.</div></div><div class="space-y-1"><div class="flex items-center gap-2 text-[#7DD3FC]"><span class="text-[#94A3B8]">feath@workstation:~$</span><span class="font-bold text-[#E0F2FE]">./pentest-local.sh --target admin-console</span></div><div class="text-[#E0F2FE] pl-4 border-l border-[#E0F2FE]/20 font-mono text-[13px]"><span class="text-[#D97706] font-bold">[OK]</span> Proactive penetration test complete. Injections neutralized before shipping.</div></div><div class="space-y-1"><div class="flex items-center gap-2 text-[#7DD3FC]"><span class="text-[#94A3B8]">feath@workstation:~$</span><span class="font-bold text-[#E0F2FE]">./verify-luau-hooks.sh</span></div><div class="text-[#E0F2FE] pl-4 border-l border-[#E0F2FE]/20 space-y-1 font-mono text-[13px]"><div><span class="text-[#D97706] font-bold">[OK]</span> Client-side memory anti-tamper runtime active</div><div><span class="text-[#D97706] font-bold">[OK]</span> Automated vulnerability checks synchronized</div><div><span class="text-[#D97706] font-bold">[OK]</span> Clean CLI scripting pipelines ready for 2026</div></div></div></div><div class="pt-2"><form class="flex flex-wrap sm:flex-nowrap items-center gap-2 w-full" id="terminal-form" onsubmit="event.preventDefault(); handleTerminalCommand();"><div class="flex items-center gap-2 flex-1 min-w-0 w-full sm:w-auto"><span class="text-[#94A3B8] shrink-0 font-label-md text-label-md select-none">feath@workstation:~$</span><input autocomplete="off" class="flex-1 min-w-0 w-full bg-transparent text-[#E0F2FE] font-label-md text-label-md outline-none border-none placeholder:text-[#94A3B8]/60 focus:ring-0 p-0" id="terminal-input" placeholder="type 'help', 'skills', 'cve', 'projects', or 'contact'..." spellcheck="false" type="text"/></div><button class="shrink-0 font-label-sm text-label-sm px-3 py-1 sm:py-0.5 border border-[#D97706] hover:bg-[#D97706] hover:text-[#0F172A] text-[#D97706] transition-colors uppercase font-bold tracking-wider" type="submit">EXEC</button></form><div class="mt-2 text-[#94A3B8] pl-4 border-l border-[#D97706] font-label-sm text-label-sm hidden overflow-hidden" id="terminal-dynamic-output"></div></div></div></div></div></section><section class="w-full bg-[#0F172A] text-[#E0F2FE] border-b border-[#E0F2FE]/15 py-space-lg" id="execution-protocol"><div class="max-w-[1440px] mx-auto px-margin md:px-margin-tablet lg:px-margin-desktop"><div class="border border-[#E0F2FE]/20 bg-[#1E293B]/40 p-space-md reveal-item"><div class="flex flex-wrap items-center justify-between gap-space-sm pb-space-sm border-b border-[#E0F2FE]/15 font-label-sm text-label-sm text-[#94A3B8]"><div class="flex items-center gap-2"><span class="text-[#D97706] font-bold">// 01.5 — EXECUTION_PROTOCOL</span><span>//</span><span class="text-[#E0F2FE] uppercase tracking-wider font-semibold">HOW I WORK [ACTION &gt; THEORY]</span></div><span class="px-2 py-0.5 border border-[#D97706]/40 bg-[#0F172A] text-[#D97706] uppercase font-bold text-[10px]">DISCIPLINE: FUNCTION FIRST</span></div><div class="grid grid-cols-1 md:grid-cols-2 gap-x-gutter gap-y-2 pt-space-sm font-label-md text-label-md"><div class="reveal-item flex items-start gap-2 py-1" style="--delay-index: 0;"><span class="text-[#D97706] font-bold font-mono">[x]</span><span class="text-[#E0F2FE]"><strong class="text-white font-bold">ACTION OVER THEORY</strong> — Executable commands and working code over abstract explanations.</span></div><div class="reveal-item flex items-start gap-2 py-1" style="--delay-index: 1;"><span class="text-[#D97706] font-bold font-mono">[x]</span><span class="text-[#E0F2FE]"><strong class="text-white font-bold">CLI-FIRST WORKFLOW</strong> — Terminal utilities and headless scripts over bloated graphical wrappers.</span></div><div class="reveal-item flex items-start gap-2 py-1" style="--delay-index: 2;"><span class="text-[#D97706] font-bold font-mono">[x]</span><span class="text-[#E0F2FE]"><strong class="text-white font-bold">CUSTOM TOOLING BUILDER</strong> — Writes bespoke CVE checkers, scrapers, and automation scripts instead of waiting for vendor tooling.</span></div><div class="reveal-item flex items-start gap-2 py-1" style="--delay-index: 3;"><span class="text-[#D97706] font-bold font-mono">[x]</span><span class="text-[#E0F2FE]"><strong class="text-white font-bold">PROACTIVE SECURITY AUDITING</strong> — Penetration-tests admin panels and web interfaces internally prior to release.</span></div><div class="reveal-item flex items-start gap-2 py-1 md:col-span-2 border-t border-[#E0F2FE]/10 pt-2" style="--delay-index: 4;"><span class="text-[#D97706] font-bold font-mono">[x]</span><span class="text-[#E0F2FE]"><strong class="text-white font-bold">SINGLE-PURPOSE UTILITIES</strong> — Fast, composable UNIX-style tools with zero decoration or runtime bloat.</span></div></div></div></div></section><section class="w-full bg-[#0F172A] text-[#E0F2FE] bg-blueprint-grid border-b border-[#E0F2FE]/15 py-space-xl lg:py-24 relative" id="skills"><div class="max-w-[1440px] mx-auto px-margin md:px-margin-tablet lg:px-margin-desktop"><div class="reveal-item flex flex-col md:flex-row md:items-end justify-between gap-space-md pb-space-lg border-b border-[#E0F2FE]/15"><div><div class="flex items-center gap-space-sm font-label-sm text-label-sm text-[#94A3B8] uppercase tracking-widest mb-space-xs"><span>02 — TECHNICAL_CAPABILITIES</span><span>//</span><span>MATRIX_INDEX</span></div><h2 class="font-headline-lg text-headline-lg text-[#E0F2FE] font-bold tracking-tight">
+Core Competencies &amp; Stack
+</h2></div><div class="font-label-sm text-label-sm text-[#94A3B8] md:text-right uppercase">
+SELF-ASSESSED PROFICIENCY LEVELS<br/>
+DISCIPLINE: SECURITY &amp; SYSTEMS
+</div></div><div class="grid grid-cols-1 lg:grid-cols-3 gap-0 border-l border-t border-[#E0F2FE]/15 mt-space-xl"><div class="reveal-item border-r border-b border-[#E0F2FE]/15 bg-[#0F172A]/90 p-space-lg flex flex-col justify-between hover:bg-[#1E293B] transition-colors group" style="--delay-index: 0;"><div><div class="flex items-start justify-between pb-space-md border-b border-[#E0F2FE]/15"><div class="flex items-center gap-2"><span class="material-symbols-outlined text-[20px] text-[#D97706]">shield</span><span class="font-label-sm text-label-sm tracking-widest uppercase text-[#94A3B8]">CAPABILITY_01</span></div><span class="font-label-md text-label-md text-[#7DD3FC] font-bold">01</span></div><h3 class="font-headline-sm text-headline-sm text-[#E0F2FE] font-bold uppercase tracking-wide mt-space-md mb-space-lg">Security &amp; Anti-Tamper</h3><div class="space-y-0 divide-y divide-[#E0F2FE]/15 font-label-md text-label-md"><div class="py-space-sm flex items-center justify-between group-hover:pl-1 transition-all"><span class="text-[#E0F2FE]">Memory Protection &amp; Integrity</span><span class="px-2 py-0.5 bg-[#1E293B] border border-slate-700 text-slate-300 text-[11px] font-mono uppercase font-medium tracking-wider">[■■■□] ADVANCED</span></div><div class="py-space-sm flex items-center justify-between group-hover:pl-1 transition-all"><span class="text-[#E0F2FE]">Anti-Tamper &amp; Hook Guarding</span><span class="px-2 py-0.5 bg-[#1E293B] border border-slate-700 text-slate-300 text-[11px] font-mono uppercase font-medium tracking-wider">[■■■□] ADVANCED</span></div><div class="py-space-sm flex items-center justify-between group-hover:pl-1 transition-all"><span class="text-[#E0F2FE]">Custom CVE Scanners &amp; Automation</span><span class="px-2 py-0.5 bg-[#1E293B] border border-slate-700 text-slate-300 text-[11px] font-mono uppercase font-medium tracking-wider">[■■■□] ADVANCED</span></div><div class="py-space-sm flex items-center justify-between group-hover:pl-1 transition-all"><span class="text-[#E0F2FE]">Code Obfuscation Analysis</span><span class="px-2 py-0.5 bg-[#1E293B]/60 border border-slate-700/60 text-slate-400 text-[11px] font-mono uppercase font-medium tracking-wider">[■□□□] BEGINNER</span></div></div></div><div class="mt-space-lg pt-space-md border-t border-[#E0F2FE]/15 font-label-sm text-label-sm text-[#94A3B8] flex items-center justify-between"><span>FOCUS: RUNTIME DEFENSE</span><span class="text-[#7DD3FC] font-mono text-[10px]">AUDITED</span></div></div><div class="reveal-item border-r border-b border-[#E0F2FE]/15 bg-[#0F172A]/90 p-space-lg flex flex-col justify-between hover:bg-[#1E293B] transition-colors group" style="--delay-index: 1;"><div><div class="flex items-start justify-between pb-space-md border-b border-[#E0F2FE]/15"><div class="flex items-center gap-2"><span class="material-symbols-outlined text-[20px] text-[#D97706]">terminal</span><span class="font-label-sm text-label-sm tracking-widest uppercase text-[#94A3B8]">CAPABILITY_02</span></div><span class="font-label-md text-label-md text-[#7DD3FC] font-bold">02</span></div><h3 class="font-headline-sm text-headline-sm text-[#E0F2FE] font-bold uppercase tracking-wide mt-space-md mb-space-lg">Systems &amp; CLI Scripting</h3><div class="space-y-0 divide-y divide-[#E0F2FE]/15 font-label-md text-label-md"><div class="py-space-sm flex items-center justify-between group-hover:pl-1 transition-all"><span class="text-[#E0F2FE]">Python CLI Utilities &amp; Shell</span><span class="px-2 py-0.5 bg-[#1E293B] border border-slate-700 text-slate-300 text-[11px] font-mono uppercase font-medium tracking-wider">[■■■□] ADVANCED</span></div><div class="py-space-sm flex items-center justify-between group-hover:pl-1 transition-all"><span class="text-[#E0F2FE]">Luau / Lua Runtime Systems</span><span class="px-2 py-0.5 bg-[#1E293B] border border-slate-700 text-slate-300 text-[11px] font-mono uppercase font-medium tracking-wider">[■■■□] ADVANCED</span></div><div class="py-space-sm flex items-center justify-between group-hover:pl-1 transition-all"><span class="text-[#E0F2FE]">Data Structures &amp; Logic</span><span class="px-2 py-0.5 bg-[#1E293B] border border-slate-700/60 text-slate-300 text-[11px] font-mono uppercase font-medium tracking-wider">[■■□□] INTERMEDIATE</span></div><div class="py-space-sm flex items-center justify-between group-hover:pl-1 transition-all"><span class="text-[#E0F2FE]">API &amp; Webhook Integration</span><span class="px-2 py-0.5 bg-[#1E293B]/60 border border-slate-700/60 text-slate-400 text-[11px] font-mono uppercase font-medium tracking-wider">[■□□□] BEGINNER</span></div></div></div><div class="mt-space-lg pt-space-md border-t border-[#E0F2FE]/15 font-label-sm text-label-sm text-[#94A3B8] flex items-center justify-between"><span>TOOLING: CLI / HEADLESS</span><span class="text-[#7DD3FC] font-mono text-[10px]">STANDARDIZED</span></div></div><div class="reveal-item border-r border-b border-[#E0F2FE]/15 bg-[#0F172A]/90 p-space-lg flex flex-col justify-between hover:bg-[#1E293B] transition-colors group" style="--delay-index: 2;"><div><div class="flex items-start justify-between pb-space-md border-b border-[#E0F2FE]/15"><div class="flex items-center gap-2"><span class="material-symbols-outlined text-[20px] text-[#D97706]">security</span><span class="font-label-sm text-label-sm tracking-widest uppercase text-[#94A3B8]">CAPABILITY_03</span></div><span class="font-label-md text-label-md text-[#7DD3FC] font-bold">03</span></div><h3 class="font-headline-sm text-headline-sm text-[#E0F2FE] font-bold uppercase tracking-wide mt-space-md mb-space-lg">App Pentest &amp; UI Architecture</h3><div class="space-y-0 divide-y divide-[#E0F2FE]/15 font-label-md text-label-md"><div class="py-space-sm flex items-center justify-between group-hover:pl-1 transition-all"><span class="text-[#E0F2FE]">Web &amp; Admin App Pentesting</span><span class="px-2 py-0.5 bg-[#1E293B] border border-slate-700/60 text-slate-300 text-[11px] font-mono uppercase font-medium tracking-wider">[■■□□] INTERMEDIATE</span></div><div class="py-space-sm flex items-center justify-between group-hover:pl-1 transition-all"><span class="text-[#E0F2FE]">Design Systems &amp; UI Tokens</span><span class="px-2 py-0.5 bg-[#1E293B] border border-slate-700/60 text-slate-300 text-[11px] font-mono uppercase font-medium tracking-wider">[■■□□] INTERMEDIATE</span></div><div class="py-space-sm flex items-center justify-between group-hover:pl-1 transition-all"><span class="text-[#E0F2FE]">Interface Hierarchy &amp; Ergonomics</span><span class="px-2 py-0.5 bg-[#1E293B] border border-slate-700/60 text-slate-300 text-[11px] font-mono uppercase font-medium tracking-wider">[■■□□] INTERMEDIATE</span></div><div class="py-space-sm flex items-center justify-between group-hover:pl-1 transition-all"><span class="text-[#E0F2FE]">Accessibility &amp; Polish</span><span class="px-2 py-0.5 bg-[#1E293B]/60 border border-slate-700/60 text-slate-400 text-[11px] font-mono uppercase font-medium tracking-wider">[■□□□] BEGINNER</span></div></div></div><div class="mt-space-lg pt-space-md border-t border-[#E0F2FE]/15 font-label-sm text-label-sm text-[#94A3B8] flex items-center justify-between"><span>DISCIPLINE: AUDITED UX</span><span class="text-[#7DD3FC] font-mono text-[10px]">COMPLIANT</span></div></div></div></div></section><section class="w-full bg-[#E0F2FE] text-[#0F172A] border-b border-[#0F172A]/20 py-space-xl lg:py-20" id="stats"><div class="max-w-[1440px] mx-auto px-margin md:px-margin-tablet lg:px-margin-desktop"><div class="reveal-item flex items-center justify-between border-b border-[#0F172A]/15 pb-space-md"><div class="flex items-center gap-space-sm font-label-sm text-label-sm text-[#475569] uppercase tracking-widest"><span>03 — METRICS</span><span>//</span><span>TELEMETRY_BENCHMARKS</span></div><span class="font-label-sm text-label-sm uppercase tracking-widest text-[#0F172A] font-bold">BY THE NUMBERS [VERIFIED]</span></div><div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-0 border-l border-[#0F172A]/15 mt-space-lg"><div class="reveal-item p-space-lg border-r border-b lg:border-b-0 border-[#0F172A]/15 flex flex-col justify-between bg-[#E0F2FE] hover:bg-[#BAE6FD]/40 transition-colors" style="--delay-index: 0;"><span class="font-label-sm text-label-sm text-[#475569] uppercase tracking-wider">// EXPERIENCE</span><div class="font-headline-xl text-headline-xl lg:text-[64px] font-bold text-[#0F172A] tracking-tight my-4">1+</div><div class="border-t border-[#0F172A]/15 pt-2 font-label-sm text-label-sm text-[#334155] uppercase tracking-wider font-semibold">YEARS LUAU &amp; SCRIPT PROTECTION</div></div><div class="reveal-item p-space-lg border-r border-b lg:border-b-0 border-[#0F172A]/15 flex flex-col justify-between bg-[#E0F2FE] hover:bg-[#BAE6FD]/40 transition-colors" style="--delay-index: 1;"><span class="font-label-sm text-label-sm text-[#475569] uppercase tracking-wider">// DELIVERIES</span><div class="font-headline-xl text-headline-xl lg:text-[64px] font-bold text-[#0F172A] tracking-tight my-4">10+</div><div class="border-t border-[#0F172A]/15 pt-2 font-label-sm text-label-sm text-[#334155] uppercase tracking-wider font-semibold">SCRIPTS &amp; UI PROTOTYPES</div></div><div class="reveal-item p-space-lg border-r border-b sm:border-b-0 border-[#0F172A]/15 flex flex-col justify-between bg-[#E0F2FE] hover:bg-[#BAE6FD]/40 transition-colors" style="--delay-index: 2;"><span class="font-label-sm text-label-sm text-[#475569] uppercase tracking-wider">// CORE_FOCUS</span><div class="font-headline-xl text-headline-xl lg:text-[64px] font-bold text-[#0F172A] tracking-tight my-4">LUAU</div><div class="border-t border-[#0F172A]/15 pt-2 font-label-sm text-label-sm text-[#334155] uppercase tracking-wider font-semibold">CLIENT-SIDE ANTI-TAMPER</div></div><div class="reveal-item p-space-lg border-r border-[#0F172A]/15 flex flex-col justify-between bg-[#E0F2FE] hover:bg-[#BAE6FD]/40 transition-colors" style="--delay-index: 3;"><span class="font-label-sm text-label-sm text-[#475569] uppercase tracking-wider">// UI_ENGINEERING</span><div class="font-headline-xl text-headline-xl lg:text-[64px] font-bold text-[#0F172A] tracking-tight my-4">100%</div><div class="border-t border-[#0F172A]/15 pt-2 font-label-sm text-label-sm text-[#334155] uppercase tracking-wider font-semibold">UI DESIGN &amp; POLISH</div></div></div></div></section><section class="w-full bg-[#E0F2FE] text-[#0F172A] border-b border-[#0F172A]/20 py-space-xl lg:py-24" id="projects"><div class="max-w-[1440px] mx-auto px-margin md:px-margin-tablet lg:px-margin-desktop"><div class="reveal-item flex flex-col md:flex-row md:items-end justify-between gap-space-md pb-space-lg border-b border-[#0F172A]/15"><div><div class="flex items-center gap-space-sm font-label-sm text-label-sm text-[#475569] uppercase tracking-widest mb-space-xs"><span>04 — SELECTED_WORK</span><span>//</span><span>REPOSITORY_RELEASE</span></div><h2 class="font-headline-lg text-headline-lg text-[#0F172A] font-bold tracking-tight">
+Security &amp; UX Projects
+</h2></div><a class="font-label-md text-label-md uppercase tracking-wider text-[#0F172A] hover:text-[#D97706] transition-colors flex items-center gap-1.5 pb-1 border-b border-[#0F172A] hover:border-[#D97706]" href="https://github.com/feath41" rel="noopener noreferrer" target="_blank"><span>GITHUB @feath41</span><span class="text-[14px]">↗</span></a></div><div class="grid grid-cols-1 lg:grid-cols-2 gap-gutter-desktop mt-space-xl"><article class="reveal-item border border-[#0F172A] bg-[#E0F2FE] flex flex-col shadow-[4px_4px_0px_0px_#0F172A] group" style="--delay-index: 0;"><div class="relative w-full h-72 bg-[#0F172A] border-b border-[#0F172A] overflow-hidden flex flex-col justify-between p-space-md"><div class="flex items-center justify-between w-full font-label-sm text-label-sm text-[#94A3B8] z-10"><span class="px-2 py-0.5 bg-[#1E293B] border border-[#E0F2FE]/25 text-[#E0F2FE] uppercase font-bold tracking-wider">RELEASED 2025</span><span class="tracking-widest uppercase text-[#7DD3FC]">SCOPE: TEAM PROJECT</span></div><div class="absolute inset-0 flex items-center justify-center"><div class="relative w-36 h-36 border border-[#E0F2FE]/25 p-1 bg-[#1E293B]/60 group-hover:border-[#D97706] transition-all flex items-center justify-center overflow-hidden"><span class="absolute -top-1.5 -left-1.5 text-[#7DD3FC] font-label-sm text-[10px]">+</span><span class="absolute -top-1.5 -right-1.5 text-[#7DD3FC] font-label-sm text-[10px]">+</span><span class="absolute -bottom-1.5 -left-1.5 text-[#7DD3FC] font-label-sm text-[10px]">+</span><span class="absolute -bottom-1.5 -right-1.5 text-[#7DD3FC] font-label-sm text-[10px]">+</span><img alt="Shield Team Logo" class="w-full h-full object-cover rounded-sm group-hover:scale-105 transition-transform duration-300" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCyNzecMgn0Lplbu4UgEPpgtBJEq6ZV-iqZK0ob8kVkwXbaMjv_z55IyTk7FxoTiTZ22Cm4kn_JiJ0hr6Z9qdYdmdeXrOxS66DdA-m84Xot0_yaSXAcd9DoDEzkipK444OKksZVkXqZzd11Aiw5mzTLIho0-ttFLAUOplDTfKAvuhHgId0pn1OvphCw-yCC1sYI8DAzyEDNYXueewQsAZjZXiIpecFsRA5uo5-dMkyO_hHDzUEyKZcFjAEog-oD-QJ-1Q"/></div></div><div class="flex items-center justify-between w-full font-label-sm text-label-sm text-[#94A3B8] z-10"><span>PLATFORM: LUAU_VM</span><span class="font-bold text-[#E0F2FE] tracking-widest uppercase">ROBLOX_SEC_SHIELD</span></div></div><div class="p-space-lg flex flex-col justify-between flex-1 bg-[#E0F2FE]"><div><div class="font-label-sm text-label-sm text-[#475569] uppercase tracking-widest font-semibold">
+MEMORY INTEGRITY &amp; CLIENT-SIDE ANTI-TAMPER DEFENSE
+</div><h3 class="font-headline-md text-headline-md text-[#0F172A] font-bold mt-1 mb-space-sm tracking-tight">Roblox Script (Shield Team)</h3><p class="font-body-md text-body-md text-[#334155] leading-relaxed">
+An advanced client-side memory protection runtime deployed to neutralize unauthorized code injections, remote call hijacking, and thread context manipulation inside the Luau execution environment.
+</p></div><div class="mt-space-lg pt-space-md border-t border-[#0F172A]/15 flex flex-wrap items-center justify-between gap-space-sm"><div class="font-label-sm text-label-sm text-[#475569] uppercase tracking-wider font-medium">
+STACK: LUAU • BYTECODE HOOKS • VIRTUAL GC
+</div><a class="inline-flex items-center gap-1.5 font-label-sm text-label-sm uppercase tracking-wider font-bold text-[#0F172A] hover:text-[#D97706] transition-colors" href="https://discord.gg/cWqzRPCaG7" rel="noopener noreferrer" target="_blank"><span>COMMUNITY // DISCORD</span><span class="text-[12px]">↗</span></a></div></div></article><article class="reveal-item border border-[#0F172A] bg-[#E0F2FE] flex flex-col shadow-[4px_4px_0px_0px_#0F172A] group" style="--delay-index: 1;"><div class="relative w-full h-72 bg-[#0F172A] border-b border-[#0F172A] overflow-hidden flex flex-col justify-between p-space-md"><div class="flex items-center justify-between w-full font-label-sm text-label-sm text-[#94A3B8] z-10"><span class="px-2 py-0.5 bg-[#1E293B] border border-[#E0F2FE]/25 text-[#E0F2FE] uppercase font-bold tracking-wider">
+RELEASED 2026
+</span><span class="tracking-widest uppercase text-[#7DD3FC]">SYS_CLASS: PROTOTYPE</span></div><div class="absolute inset-0 flex items-center justify-center"><div class="w-full max-w-xs border border-[#E0F2FE]/20 p-space-md bg-[#1E293B]/80 font-label-sm text-label-sm space-y-3 group-hover:border-[#D97706] transition-colors"><div class="flex items-center justify-between text-[#94A3B8] border-b border-[#E0F2FE]/15 pb-2"><span class="flex items-center gap-1.5 text-[#E0F2FE] font-bold"><span class="material-symbols-outlined text-[16px] text-[#D97706]">dashboard</span>UI_SPEC // PROTOTYPE</span><span class="text-[#7DD3FC] font-mono text-[10px]">v0.1-ALPHA</span></div><div class="grid grid-cols-2 gap-2 text-[11px] font-mono"><div class="p-2 bg-[#0F172A] border border-[#E0F2FE]/10"><div class="text-[#94A3B8] text-[10px]">STATUS</div><div class="text-[#D97706] font-bold mt-0.5">IN DEVELOPMENT</div></div><div class="p-2 bg-[#0F172A] border border-[#E0F2FE]/10"><div class="text-[#94A3B8] text-[10px]">MODE</div><div class="text-[#E0F2FE] font-bold mt-0.5">STATIC WIREFRAME</div></div></div><div class="flex justify-between items-center text-[10px] text-[#94A3B8] pt-1 border-t border-[#E0F2FE]/10"><span>DESIGN SYSTEM: TOKENIZED</span><span class="text-[#7DD3FC]">WCAG AAA</span></div></div></div><div class="flex items-center justify-between w-full font-label-sm text-label-sm text-[#94A3B8] z-10"><span>TELEMETRY_ENGINE</span><span class="font-bold text-[#E0F2FE] tracking-widest uppercase">SYS_TELEMETRY</span></div></div><div class="p-space-lg flex flex-col justify-between flex-1 bg-[#E0F2FE]"><div><div class="font-label-sm text-label-sm text-[#475569] uppercase tracking-widest font-semibold">
+HIGH-DENSITY MONITORING SYSTEM &amp; TOKENIZED DESIGN RUNTIME
+</div><h3 class="font-headline-md text-headline-md text-[#0F172A] font-bold mt-1 mb-space-sm tracking-tight">
+Cyber Threat Architect UI
+</h3><p class="font-body-md text-body-md text-[#334155] leading-relaxed">
+A mission-critical administrative console utilizing high-contrast tokens, WCAG AAA compliant typography, and real-time network anomaly packet stream visualization.
+</p></div><div class="mt-space-lg pt-space-md border-t border-[#0F172A]/15 flex flex-wrap items-center justify-between gap-space-sm"><div class="font-label-sm text-label-sm text-[#475569] uppercase tracking-wider font-medium">
+STACK: FIGMA TOKENS • PYTHON API • TAILWIND • WEBSOCKET
+</div><a class="inline-flex items-center gap-1.5 font-label-sm text-label-sm uppercase tracking-wider font-bold text-[#0F172A] hover:text-[#D97706] transition-colors" href="https://github.com/feath41" rel="noopener noreferrer" target="_blank"><span>VIEW SCHEMATIC</span><span class="text-[12px]">↗</span></a></div></div></article></div></div></section><section class="w-full bg-[#0F172A] text-[#E0F2FE] bg-blueprint-grid border-b border-[#E0F2FE]/15 py-space-xl lg:py-24 relative" id="contact"><div class="max-w-[1440px] mx-auto px-margin md:px-margin-tablet lg:px-margin-desktop"><div class="reveal-item flex flex-col md:flex-row md:items-end justify-between gap-space-md pb-space-lg border-b border-[#E0F2FE]/15"><div><div class="flex items-center gap-space-sm font-label-sm text-label-sm text-[#94A3B8] uppercase tracking-widest mb-space-xs"><span>05 — CONTACT</span><span>//</span><span>SECURE_DISPATCH</span></div><div class="font-label-sm text-label-sm text-[#94A3B8] uppercase">
+COMMUNICATION STATUS: OPEN FOR INQUIRIES
+</div></div><div class="font-label-sm text-label-sm text-[#94A3B8] md:text-right uppercase">
+AVAILABILITY: 2026 ENGAGEMENTS<br/>
+DIRECT LINE: READY
+</div></div><div class="mt-space-xl max-w-3xl"><h2 class="reveal-item font-headline-lg text-headline-lg lg:text-[56px] lg:leading-[60px] text-[#E0F2FE] font-bold tracking-tight" style="--delay-index: 1;">
+Got a project that needs building?<br/>
+Let's talk systems.
+</h2><p class="reveal-item font-body-lg text-body-lg text-[#94A3B8] mt-space-md leading-relaxed" style="--delay-index: 2;">
+Available for contract engagements, offensive/defensive security architectures, and precision web systems. Currently open to new collaborations for 2026.
+</p><div class="mt-space-xl space-y-3"><div class="reveal-item w-full border border-[#E0F2FE]/25 bg-[#1E293B]/60 p-1 flex flex-col sm:flex-row items-stretch gap-1 group transition-colors hover:border-[#D97706]" style="--delay-index: 3;"><button class="flex-1 flex items-center justify-between px-space-md py-3 text-left bg-transparent hover:bg-[#1E293B] transition-colors text-[#E0F2FE] font-label-md text-label-md uppercase tracking-wider" id="btn-copy-wa" onclick="copySnippet('+6285284429139', 'btn-copy-wa', 'badge-wa-feedback')" title="Click to copy WhatsApp digits to clipboard" type="button"><div class="flex items-center gap-2"><span class="material-symbols-outlined text-[16px] text-[#7DD3FC]">chat</span><span class="font-bold font-mono tracking-wider">WHATSAPP // WIRE: <span class="text-[#E0F2FE] group-hover:text-[#D97706] transition-colors">+62 852-8442-9139</span></span></div><div class="flex items-center gap-2"><span class="text-[11px] px-2 py-0.5 border border-[#E0F2FE]/20 bg-[#0F172A] text-[#94A3B8] group-hover:text-[#D97706] group-hover:border-[#D97706]/40 transition-colors flex items-center gap-1"><span class="material-symbols-outlined text-[12px]">content_copy</span><span>COPY</span></span></div></button><div class="flex items-center border-t sm:border-t-0 sm:border-l border-[#E0F2FE]/15"><a class="px-4 py-3 sm:py-0 h-full flex items-center justify-center gap-1.5 bg-[#0F172A] text-[#E0F2FE] hover:bg-[#D97706] hover:text-[#0F172A] border border-[#E0F2FE]/20 hover:border-[#D97706] transition-all font-label-sm text-label-sm uppercase tracking-wider font-bold" href="https://wa.me/6285284429139" rel="noopener noreferrer" target="_blank" title="Direct WhatsApp Link"><span>OPEN CHAT</span><span class="text-[12px]">↗</span></a></div></div><div class="hidden px-space-md py-1.5 border border-[#D97706] bg-[#0F172A] text-[#D97706] font-label-sm text-label-sm tracking-wider flex items-center justify-between" id="badge-wa-feedback"><div class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-[#D97706] animate-ping"></span><span>[COPIED // BUFFER_HEX: +6285284429139]</span></div><span class="text-[#7DD3FC] text-[10px]">SYNC_OK // 200</span></div><div class="reveal-item w-full border border-[#E0F2FE]/25 bg-[#1E293B]/60 p-1 flex flex-col sm:flex-row items-stretch gap-1 group transition-colors hover:border-[#D97706]" style="--delay-index: 4;"><button class="flex-1 flex items-center justify-between px-space-md py-3 text-left bg-transparent hover:bg-[#1E293B] transition-colors text-[#E0F2FE] font-label-md text-label-md uppercase tracking-wider" id="btn-copy-email" onclick="copySnippet('dipoarya25@gmail.com', 'btn-copy-email', 'badge-email-feedback')" title="Click to copy email address" type="button"><div class="flex items-center gap-2"><span class="material-symbols-outlined text-[16px] text-[#7DD3FC]">mail</span><span class="font-bold font-mono tracking-wider">DIRECT EMAIL // <span class="text-[#E0F2FE] group-hover:text-[#D97706] transition-colors">dipoarya25@gmail.com</span></span></div><div class="flex items-center gap-2"><span class="text-[11px] px-2 py-0.5 border border-[#E0F2FE]/20 bg-[#0F172A] text-[#94A3B8] group-hover:text-[#D97706] group-hover:border-[#D97706]/40 transition-colors flex items-center gap-1"><span class="material-symbols-outlined text-[12px]">content_copy</span><span>COPY</span></span></div></button><div class="flex items-center border-t sm:border-t-0 sm:border-l border-[#E0F2FE]/15"><a class="px-4 py-3 sm:py-0 h-full flex items-center justify-center gap-1.5 bg-transparent border border-[#D97706] hover:bg-[#D97706] text-[#D97706] hover:text-[#0F172A] transition-all font-label-sm text-label-sm uppercase tracking-wider font-bold" href="mailto:dipoarya25@gmail.com" title="Open Mail Client"><span>MAILTO</span><span class="text-[12px]">↗</span></a></div></div><div class="hidden px-space-md py-1.5 border border-[#D97706] bg-[#0F172A] text-[#D97706] font-label-sm text-label-sm tracking-wider flex items-center justify-between" id="badge-email-feedback"><div class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-[#D97706] animate-ping"></span><span>[COPIED TO CLIPBOARD // DISPATCH_ADDR: dipoarya25@gmail.com]</span></div><span class="text-[#7DD3FC] text-[10px]">CLIPBOARD_MEM_STORED</span></div></div><div class="mt-space-xl"><div class="reveal-item font-label-sm text-label-sm uppercase tracking-widest text-[#94A3B8] mb-space-sm flex items-center justify-between" style="--delay-index: 5;"><span>ADDITIONAL DISPATCH CHANNELS</span><span class="text-[10px] text-[#7DD3FC]">STATUS: MONITORED</span></div><div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-space-sm"><a class="reveal-item flex items-center justify-between p-space-md bg-[#1E293B]/40 border border-[#E0F2FE]/15 hover:border-[#D97706] transition-colors text-[#E0F2FE] hover:text-[#D97706] group" href="https://github.com/feath41" rel="noopener noreferrer" style="--delay-index: 6;" target="_blank"><div class="flex items-center gap-2 font-label-md text-label-md uppercase"><svg class="w-4 h-4 text-[#94A3B8] group-hover:text-[#D97706] transition-colors" fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg><span>@feath41</span></div><span class="font-label-sm text-label-sm text-[#94A3B8] group-hover:text-[#D97706] group-hover:translate-x-1 transition-transform">↗</span></a><a class="reveal-item flex items-center justify-between p-space-md bg-[#1E293B]/40 border border-[#E0F2FE]/15 hover:border-[#D97706] transition-colors text-[#E0F2FE] hover:text-[#D97706] group" href="https://discord.com/users/1452943274678419490" rel="noopener noreferrer" style="--delay-index: 7;" target="_blank"><div class="flex items-center gap-2 font-label-md text-label-md uppercase"><svg class="w-4 h-4 text-[#94A3B8] group-hover:text-[#D97706] transition-colors" fill="currentColor" viewbox="0 0 24 24"><path d="M20.317 4.37a19.791 19.791 0 0 0-4.885-1.515.074.074 0 0 0-.079.037c-.21.375-.444.864-.608 1.25a18.27 18.27 0 0 0-5.487 0 12.64 12.64 0 0 0-.617-1.25.077.077 0 0 0-.079-.037A19.736 19.736 0 0 0 3.677 4.37a.07.07 0 0 0-.032.027C.533 9.046-.32 13.58.099 18.057a.082.082 0 0 0 .031.057 19.9 19.9 0 0 0 5.993 3.03.078.078 0 0 0 .084-.028c.462-.63.874-1.295 1.226-1.994.021-.041.001-.09-.041-.106a13.107 13.107 0 0 1-1.872-.892.077.077 0 0 1-.008-.128 10.2 10.2 0 0 0 .372-.292.074.074 0 0 1 .077-.01c3.929 1.793 8.18 1.793 12.061 0a.074.074 0 0 1 .078.01c.12.098.246.198.373.292a.077.077 0 0 1-.006.127 12.299 12.299 0 0 1-1.873.893.077.077 0 0 0-.041.107c.36.698.772 1.362 1.225 1.993a.076.076 0 0 0 .084.028 19.839 19.839 0 0 0 6.002-3.03.077.077 0 0 0 .032-.054c.5-5.177-.838-9.674-3.549-13.66a.061.061 0 0 0-.031-.028zM8.02 15.33c-1.183 0-2.157-1.085-2.157-2.419 0-1.333.956-2.419 2.157-2.419 1.21 0 2.176 1.096 2.157 2.42 0 1.333-.956 2.418-2.157 2.418zm7.975 0c-1.183 0-2.157-1.085-2.157-2.419 0-1.333.955-2.419 2.157-2.419 1.21 0 2.176 1.096 2.157 2.42 0 1.333-.946 2.418-2.157 2.418z" fill="currentColor"></path></svg><span>feath</span></div><span class="font-label-sm text-label-sm text-[#94A3B8] group-hover:text-[#D97706] group-hover:translate-x-1 transition-transform">↗</span></a><a class="reveal-item flex items-center justify-between p-space-md bg-[#1E293B]/40 border border-[#E0F2FE]/15 hover:border-[#D97706] transition-colors text-[#E0F2FE] hover:text-[#D97706] group" href="https://www.instagram.com/dikzmi" rel="noopener noreferrer" style="--delay-index: 8;" target="_blank"><div class="flex items-center gap-2 font-label-md text-label-md uppercase"><svg class="w-4 h-4 text-[#94A3B8] group-hover:text-[#D97706] transition-colors" fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24"><rect height="20" rx="5" ry="5" width="20" x="2" y="2"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"></line></svg><span>@dikzmi</span></div><span class="font-label-sm text-label-sm text-[#94A3B8] group-hover:text-[#D97706] group-hover:translate-x-1 transition-transform">↗</span></a></div></div></div></div></section></div><script>
+function handleTerminalCommand() {
+const input = document.getElementById('terminal-input');
+const output = document.getElementById('terminal-dynamic-output');
+if (!input || !output) return;
+const cmd = input.value.trim().toLowerCase();
+output.classList.remove('hidden');
+switch (cmd) {
+case 'help':
+output.innerHTML = "AVAILABLE ROUTINES:<br>• <strong>skills</strong> : Dump capability vector matrix<br>• <strong>cve</strong> : Run automated CVE tracker scan<br>• <strong>projects</strong> : Enumerate published repositories<br>• <strong>contact</strong> : Transmit handshake credentials<br>• <strong>copy-wa</strong> : Copy WhatsApp buffer<br>• <strong>copy-email</strong> : Copy email buffer<br>• <strong>clear</strong> : Flush buffer";
+break;
+case 'cve':
+output.innerHTML = "<span class=\"text-[#D97706] font-bold\">[OK]</span> CVE TRACKER: ./cve-tracker.py --scan ./targets<br><span class=\"text-[#D97706] font-bold\">[OK]</span> 0 unpatched vectors identified in local dependencies.<br><span class=\"text-[#7DD3FC] font-bold\">[INFO]</span> Target environment: headless linux / luau runtime.";
+break;
+case 'skills':
+output.innerHTML = "LOADED CAPABILITIES:<br>[+] Luau, Python, Reverse Engineering, Anti-Tamper Memory Bounds<br>[+] Token Architectures, WCAG AAA Systems Engineering";
+break;
+case 'projects':
+output.innerHTML = "REPOSITORIES:<br>01. Roblox Script (Shield) // Memory Protection [LIVE]<br>02. Cyber Threat Architect UI // High-density Telemetry Console [IN DEV]";
+break;
+case 'contact':
+output.innerHTML = "DIRECT ROUTES:<br>Email: dipoarya25@gmail.com<br>Discord: feath // discord.gg/cWqzRPCaG7<br>WhatsApp: +62 852-8442-9139";
+break;
+case 'copy-wa':
+copySnippet('+6285284429139', 'btn-copy-wa', 'badge-wa-feedback');
+output.innerHTML = "[EXEC] WhatsApp buffer copied: +6285284429139";
+break;
+case 'copy-email':
+copySnippet('dipoarya25@gmail.com', 'btn-copy-email', 'badge-email-feedback');
+output.innerHTML = "[EXEC] Email buffer copied: dipoarya25@gmail.com";
+break;
+case 'clear':
+output.innerHTML = "";
+output.classList.add('hidden');
+break;
+default:
+output.innerHTML = "command not recognized: " + cmd.replace(/</g, "&lt;") + ". Type 'help' for command index.";
+}
+input.value = '';
+}
+// Click-to-copy handler with visual feedback & timeout reset
+const feedbackTimers = {};
+function copySnippet(textToCopy, btnId, feedbackBadgeId) {
+if (navigator && navigator.clipboard && navigator.clipboard.writeText) {
+navigator.clipboard.writeText(textToCopy).then(() => {
+showCopyFeedback(btnId, feedbackBadgeId);
+}).catch(err => {
+fallbackCopy(textToCopy, btnId, feedbackBadgeId);
+});
+} else {
+fallbackCopy(textToCopy, btnId, feedbackBadgeId);
+}
+}
+function fallbackCopy(text, btnId, feedbackBadgeId) {
+const tempInput = document.createElement('textarea');
+tempInput.value = text;
+tempInput.setAttribute('readonly', '');
+tempInput.style.position = 'absolute';
+tempInput.style.left = '-9999px';
+document.body.appendChild(tempInput);
+tempInput.select();
+document.execCommand('copy');
+document.body.removeChild(tempInput);
+showCopyFeedback(btnId, feedbackBadgeId);
+}
+function showCopyFeedback(btnId, badgeId) {
+const badge = document.getElementById(badgeId);
+const btn = document.getElementById(btnId);
+if (badge) {
+badge.classList.remove('hidden');
+}
+if (btn) {
+btn.classList.add('bg-[#1E293B]', 'border-[#D97706]');
+}
+if (feedbackTimers[badgeId]) {
+clearTimeout(feedbackTimers[badgeId]);
+}
+feedbackTimers[badgeId] = setTimeout(() => {
+if (badge) {
+badge.classList.add('hidden');
+}
+if (btn) {
+btn.classList.remove('bg-[#1E293B]', 'border-[#D97706]');
+}
+}, 2000);
+}
+/* -------------------------------------------------------------
+SCROLL REVEAL & SEQUENTIAL TYPEWRITER ANIMATION ENHANCEMENTS
+------------------------------------------------------------- */
+document.addEventListener('DOMContentLoaded', () => {
+const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+// 1. Scroll Reveal Intersection Observer
+const revealElements = document.querySelectorAll('.reveal-item');
+if (prefersReducedMotion) {
+revealElements.forEach(el => el.classList.add('revealed'));
+} else if ('IntersectionObserver' in window) {
+const revealObserver = new IntersectionObserver((entries, observer) => {
+entries.forEach(entry => {
+if (entry.isIntersecting) {
+entry.target.classList.add('revealed');
+observer.unobserve(entry.target);
+}
+});
+}, {
+threshold: 0.1,
+rootMargin: '0px 0px -40px 0px'
+});
+revealElements.forEach(el => revealObserver.observe(el));
+} else {
+revealElements.forEach(el => el.classList.add('revealed'));
+}
+// 2. Sequential Typewriter for Embedded Terminal
+const terminalEl = document.getElementById('terminal');
+const container = document.getElementById('terminal-lines-container');
+let terminalTyped = false;
+// Terminal script sequence blueprint
+const scriptSteps = [
+{
+type: 'cmd',
+prompt: 'feath@workstation:~$',
+text: './cve-tracker.py --scan ./targets'
+},
+{
+type: 'output',
+items: [
+'<span class="text-[#D97706] font-bold">[OK]</span> Custom CVE scanner: 0 unpatched vectors identified in local dependencies.'
+]
+},
+{
+type: 'cmd',
+prompt: 'feath@workstation:~$',
+text: './pentest-local.sh --target admin-console'
+},
+{
+type: 'output',
+items: [
+'<span class="text-[#D97706] font-bold">[OK]</span> Proactive penetration test complete. Injections neutralized before shipping.'
+]
+},
+{
+type: 'cmd',
+prompt: 'feath@workstation:~$',
+text: './verify-luau-hooks.sh'
+},
+{
+type: 'output',
+items: [
+'<div><span class="text-[#D97706] font-bold">[OK]</span> Client-side memory anti-tamper runtime active</div>',
+'<div><span class="text-[#D97706] font-bold">[OK]</span> Automated vulnerability checks synchronized</div>',
+'<div><span class="text-[#D97706] font-bold">[OK]</span> Clean CLI scripting pipelines ready for 2026</div>'
+]
+}
+];
+const sleep = (ms) => new Promise(resolve => setTimeout(resolve, ms));
+async function runTerminalTypewriter() {
+if (!container) return;
+if (prefersReducedMotion) return; // Keep static initial markup
+// Clear container for fresh sequential typing
+container.innerHTML = '';
+for (const step of scriptSteps) {
+if (step.type === 'cmd') {
+const row = document.createElement('div');
+row.className = 'space-y-1';
+const cmdLine = document.createElement('div');
+cmdLine.className = 'flex items-center gap-2 text-[#7DD3FC]';
+const promptSpan = document.createElement('span');
+promptSpan.className = 'text-[#94A3B8]';
+promptSpan.textContent = step.prompt;
+const textSpan = document.createElement('span');
+textSpan.className = 'font-bold text-[#E0F2FE]';
+const cursor = document.createElement('span');
+cursor.className = 'terminal-cursor';
+cmdLine.appendChild(promptSpan);
+cmdLine.appendChild(textSpan);
+cmdLine.appendChild(cursor);
+row.appendChild(cmdLine);
+container.appendChild(row);
+// Type characters
+for (let i = 0; i < step.text.length; i++) {
+textSpan.textContent += step.text[i];
+await sleep(22);
+}
+cursor.remove();
+await sleep(280); // Brief execution pause
+} else if (step.type === 'output') {
+const lastRow = container.lastElementChild;
+if (lastRow) {
+const outBox = document.createElement('div');
+outBox.className = 'text-[#E0F2FE] pl-4 border-l border-[#E0F2FE]/20 font-mono text-[13px] ' + (step.items.length > 1 ? 'space-y-1' : '');
+outBox.style.opacity = '0';
+outBox.style.transition = 'opacity 180ms ease';
+outBox.innerHTML = step.items.join('');
+lastRow.appendChild(outBox);
+// Trigger quick realistic print reveal
+requestAnimationFrame(() => {
+outBox.style.opacity = '1';
+});
+}
+await sleep(300); // Inter-command pause
+}
+}
+// Dynamic placeholder typewriter effect on terminal input prompt
+const termInput = document.getElementById('terminal-input');
+if (termInput) {
+const fullPlaceholder = "type 'help', 'skills', 'cve', 'projects', or 'contact'...";
+termInput.placeholder = "";
+for (let i = 0; i < fullPlaceholder.length; i++) {
+termInput.placeholder += fullPlaceholder[i];
+await sleep(18);
+}
+}
+}
+if (terminalEl && 'IntersectionObserver' in window) {
+const termObserver = new IntersectionObserver((entries) => {
+entries.forEach(entry => {
+if (entry.isIntersecting && !terminalTyped) {
+terminalTyped = true;
+runTerminalTypewriter();
+termObserver.unobserve(entry.target);
+}
+});
+}, { threshold: 0.15 });
+termObserver.observe(terminalEl);
+}
+});
+</script></main><footer class="w-full bg-[#0F172A] border-t border-[#E0F2FE]/15 py-space-xl relative z-10 text-center"><div class="max-w-[1440px] mx-auto px-margin md:px-margin-tablet lg:px-margin-desktop flex flex-col items-center justify-center gap-1 font-label-sm text-label-sm text-[#94A3B8]"><div class="text-[#E0F2FE]/80">© 2026 Feath</div><div class="text-[#7DD3FC]/70"> </div></div></footer></body></html>

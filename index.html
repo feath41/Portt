@@ -1,0 +1,743 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Feath — Cyber Security &amp; UI/UX</title>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600&amp;family=Space+Grotesk:wght@400;500;600;700&amp;family=JetBrains+Mono:wght@400;500;600&amp;family=Syne:wght@600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/><style>@layer base{html,body{margin:0;padding:0;background-color:#0b0c10;}body{font-family:'Plus Jakarta Sans',sans-serif;overscroll-behavior:none;scroll-behavior:smooth;}}::-webkit-scrollbar{display:none;}.font-syne{font-family:'Syne',sans-serif;}.font-grotesk{font-family:'Space Grotesk',sans-serif;}.font-mono{font-family:'JetBrains Mono',monospace;}</style>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script>
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              black: "#0b0c10",
+              darker: "#07080a",
+              card: "#101217",
+              cardHover: "#14171d",
+              border: "#1e222d",
+              subtleBorder: "rgba(255, 255, 255, 0.07)",
+              accent: "#22c55e",
+              accentMuted: "rgba(34, 197, 94, 0.12)",
+              accentBorder: "rgba(34, 197, 94, 0.35)",
+              muted: "#8a94a6",
+              white: "#f8fafc"
+            }
+          }
+        }
+      }
+    };
+  </script>
+</head>
+<body class="bg-brand-black text-brand-white antialiased selection:bg-brand-accent selection:text-black">
+<!-- TOP EDITORIAL NAVIGATION -->
+<header class="fixed top-0 left-0 right-0 w-full z-50 bg-[#0b0c10]/90 backdrop-blur-md border-b border-brand-subtleBorder">
+<div class="max-w-[1200px] mx-auto px-6 h-16 flex items-center justify-between">
+<!-- Brand & Status -->
+<div class="flex items-center gap-6">
+<a class="flex items-center gap-3 group" href="#">
+<div class="w-8 h-8 rounded border border-brand-border bg-brand-card flex items-center justify-center p-1 group-hover:border-brand-accent transition-colors">
+<img alt="Feath mark" class="w-full h-full object-contain" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC3CSpan_TRhJVKlALvV_S885prUrqpiJUpaMxYe1gqroBkdd3BYVgCqj9rTzCdHmE-8vDxB0ZJH-CTZ1xYAvN9nuJxftcVEodCg5Aw4zM3mVC_O48ouD_VAbHZCMtFfa1bkJBgUPIiBCekTZ_XDtsZHtEF3cwtM0hSz-RGOSGSeHQHmqJVRealgQl8uSK0cZQumqU1j6n6FUbVkP9MrI65Ouj9qlDEBBEkimKultrCy4SBS-fmSFxDBNT-DJctKZUgVw"/>
+</div>
+<span class="font-syne font-bold text-lg tracking-tight text-brand-white group-hover:text-brand-accent transition-colors">Feath</span>
+</a>
+<div class="hidden md:flex items-center gap-2 pl-4 border-l border-brand-border">
+<span class="inline-block w-1.5 h-1.5 rounded-full bg-brand-accent"></span>
+<span class="font-mono text-xs text-brand-muted tracking-wide">SecOps &amp; Design Ready</span>
+</div>
+</div>
+<!-- Navigation links -->
+<nav class="hidden md:flex items-center gap-8 font-mono text-xs tracking-wider uppercase text-brand-muted">
+<a class="hover:text-brand-white transition-colors" href="#about">01. About</a>
+<a class="hover:text-brand-white transition-colors" href="#skills">02. Stack</a>
+<a class="hover:text-brand-white transition-colors" href="#projects">03. Work</a>
+<a class="hover:text-brand-white transition-colors" href="#experience">04. Learning</a>
+<a class="hover:text-brand-white transition-colors" href="#contact">05. Contact</a>
+</nav>
+<!-- Terminal Handle -->
+<div class="flex items-center gap-3">
+<a class="flex items-center gap-2 px-3 py-1.5 rounded border border-brand-border bg-brand-card hover:border-brand-accent/50 text-xs font-mono text-brand-muted hover:text-brand-white transition-colors" href="https://github.com/feath41" rel="noopener noreferrer" target="_blank">
+<svg class="w-3.5 h-3.5 text-brand-accent" fill="none" stroke="currentColor" stroke-width="1.75" viewbox="0 0 24 24">
+<polyline points="4 17 10 11 4 5"></polyline>
+<line x1="12" x2="20" y1="19" y2="19"></line>
+</svg>
+<span>feath41</span>
+</a>
+</div>
+</div>
+</header>
+<main class="w-full pt-16">
+<!-- HERO SECTION: Asymmetric & Editorial -->
+<section class="max-w-[1200px] mx-auto px-6 pt-16 md:pt-24 pb-20 border-b border-brand-subtleBorder">
+<!-- Grid framework -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-start">
+<!-- Left: Off-center Editorial Anchor -->
+<div class="lg:col-span-8 flex flex-col">
+<!-- Availability Tag -->
+<div class="inline-flex items-center gap-2.5 px-3 py-1 mb-8 rounded border border-brand-accentBorder bg-brand-accentMuted w-max">
+<span class="w-1.5 h-1.5 rounded-full bg-brand-accent animate-pulse"></span>
+<span class="font-mono text-[11px] font-medium tracking-wide uppercase text-brand-accent">Available for security &amp; product design missions</span>
+</div>
+<!-- Hero Display Typography -->
+<h1 class="font-syne text-5xl md:text-7xl font-extrabold tracking-tight leading-[1.04] text-brand-white mb-6">
+            Feath.
+          </h1>
+<p class="font-grotesk text-xl md:text-2xl text-brand-accent font-medium tracking-tight mb-8">
+            Cyber Security Enthusiast &amp; UI/UX Enthusiast
+          </p>
+<p class="text-brand-muted text-base md:text-lg leading-relaxed max-w-2xl font-light mb-12">
+            Bridging the gap between fortified defensive security, offensive testing, and pixel-precise, frictionless user interface architectures. Crafting systems that are as secure by design as they are intuitive to use.
+          </p>
+<!-- CTAs: Crisp, Monolithic & Intentional -->
+<div class="flex flex-wrap items-center gap-4">
+<a class="inline-flex items-center gap-2.5 px-6 py-3 rounded bg-brand-accent hover:bg-green-400 text-black font-mono text-xs font-semibold uppercase tracking-wider transition-all scroll-trigger" data-target="#projects" href="#projects">
+<span>Explore Projects</span>
+<svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24">
+<line x1="12" x2="12" y1="5" y2="19"></line>
+<polyline points="19 12 12 19 5 12"></polyline>
+</svg>
+</a>
+<a class="inline-flex items-center gap-2.5 px-6 py-3 rounded border border-brand-border bg-brand-card hover:bg-brand-cardHover hover:border-brand-subtleBorder text-brand-white font-mono text-xs font-semibold uppercase tracking-wider transition-all scroll-trigger" data-target="#contact" href="#contact">
+<span>Get in Touch</span>
+<svg class="w-4 h-4 text-brand-muted" fill="none" stroke="currentColor" stroke-width="1.5" viewbox="0 0 24 24">
+<rect height="16" rx="2" width="20" x="2" y="4"></rect>
+<path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"></path>
+</svg>
+</a>
+<a class="inline-flex items-center gap-2 px-4 py-3 rounded border border-brand-subtleBorder hover:border-brand-border text-brand-muted hover:text-brand-white font-mono text-xs transition-colors" href="https://github.com/feath41" rel="noopener noreferrer" target="_blank">
+<span>github/feath41</span>
+<svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="1.75" viewbox="0 0 24 24">
+<line x1="7" x2="17" y1="17" y2="7"></line>
+<polyline points="7 7 17 7 17 17"></polyline>
+</svg>
+</a>
+</div>
+</div>
+<!-- Right: Clean Framed Avatar Asset & Micro-Identity -->
+<div class="lg:col-span-4 flex flex-col justify-between self-stretch">
+<div class="relative p-6 rounded border border-brand-border bg-brand-card">
+<!-- Index indicator -->
+<div class="flex items-center justify-between pb-4 mb-5 border-b border-brand-subtleBorder font-mono text-xs text-brand-muted">
+<span>ID // REF.041</span>
+<span class="text-brand-accent">ONLINE</span>
+</div>
+<div class="relative aspect-square w-full rounded border border-brand-subtleBorder bg-brand-darker flex items-center justify-center p-8 overflow-hidden">
+<img alt="Feath Profile Identifier" class="w-full h-full object-contain filter contrast-105" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCSSPPlTsEn_f8HNnuG4a1EpbRe2mosw0B26vblAGwEs6V_HoRv8jmM9bT-PtOEEiKe2e3tBkw3N7p-IeHn7xjDLJ_xNOUKP5Qut7NtDKfI8XdaTYbY72dI1JWe2U3V2F_b9SvCYCFILPK5XgjaOsK1QD6akD69H-Runbe6zURwULeVXb6NjUnmb--G9qTbryAxoAHc5ajYBlLvgKFYMCfKxZwcMXlLAcKXFKW7Dbxhrg4WqfiGje9lPY-uX8heD0_6WA"/>
+</div>
+<div class="mt-5 pt-4 border-t border-brand-subtleBorder flex items-center justify-between font-mono text-xs">
+<span class="text-brand-muted">DISCIPLINE</span>
+<span class="text-brand-white">SEC / UX DUALITY</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Stats Bar: Architectural Horizontal Rule Layout -->
+<div class="grid grid-cols-2 md:grid-cols-4 gap-px bg-brand-border mt-16 rounded overflow-hidden border border-brand-border">
+<div class="bg-brand-card p-6 flex flex-col">
+<span class="font-mono text-3xl md:text-4xl font-semibold text-brand-white tracking-tight">1+</span>
+<span class="font-mono text-xs text-brand-muted uppercase tracking-wider mt-2">Years Sec &amp; Design</span>
+</div>
+<div class="bg-brand-card p-6 flex flex-col">
+<span class="font-mono text-3xl md:text-4xl font-semibold text-brand-white tracking-tight">20+</span>
+<span class="font-mono text-xs text-brand-muted uppercase tracking-wider mt-2">Audits &amp; Prototypes</span>
+</div>
+<div class="bg-brand-card p-6 flex flex-col">
+<span class="font-mono text-3xl md:text-4xl font-semibold text-brand-accent tracking-tight">0-Day</span>
+<span class="font-mono text-xs text-brand-muted uppercase tracking-wider mt-2">Hardened Defense</span>
+</div>
+<div class="bg-brand-card p-6 flex flex-col">
+<span class="font-mono text-3xl md:text-4xl font-semibold text-brand-white tracking-tight">100%</span>
+<span class="font-mono text-xs text-brand-muted uppercase tracking-wider mt-2">UX Accessibility</span>
+</div>
+</div>
+</section>
+<!-- 01 ABOUT SECTION -->
+<section class="max-w-[1200px] mx-auto px-6 py-24 border-b border-brand-subtleBorder" id="about">
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16">
+<!-- Section Header Sticky Rail -->
+<div class="lg:col-span-4">
+<div class="sticky top-24">
+<span class="font-mono text-xs text-brand-accent tracking-widest uppercase block mb-3">01 // Identity &amp; Philosophy</span>
+<h2 class="font-syne text-3xl md:text-4xl font-bold text-brand-white tracking-tight mb-6">About Me</h2>
+<!-- Creed Card -->
+<div class="p-6 rounded border border-brand-border bg-brand-card">
+<div class="flex items-center gap-2 font-mono text-xs text-brand-accent uppercase tracking-wider mb-3">
+<svg class="w-4 h-4 text-brand-accent" fill="none" stroke="currentColor" stroke-width="1.5" viewbox="0 0 24 24">
+<path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+</svg>
+<span>Design &amp; Security Creed</span>
+</div>
+<p class="text-sm text-brand-muted leading-relaxed font-light italic">
+                “Security does not have to be punitive, and interface elegance shouldn't come at the cost of vulnerability. The best systems are impenetrable by attackers and effortless for humans.”
+              </p>
+</div>
+</div>
+</div>
+<!-- Narrative Content -->
+<div class="lg:col-span-8 flex flex-col gap-10">
+<div class="border-b border-brand-subtleBorder pb-10">
+<p class="font-grotesk text-xl md:text-2xl text-brand-white leading-snug mb-6 font-medium">
+              Hi, I'm Feath — exploring the twin frontiers of defensive cyber security and cutting-edge digital product aesthetics.
+            </p>
+<p class="text-brand-muted text-base leading-relaxed mb-6 font-light">
+              With a deep-seated fascination for vulnerability analysis, network telemetry, and cryptography on one side, and high-fidelity interaction design, tokenized systems, and intuitive wireframing on the other, I craft secure-by-default software that users genuinely love to experience.
+            </p>
+<p class="text-brand-muted text-base leading-relaxed font-light">
+              Whether conducting threat modeling sessions, hardening microservices against injection attacks, or orchestrating responsive design systems in Figma and code, I build with precision, care, and continuous curiosity.
+            </p>
+</div>
+<!-- Quick Fact architectural list -->
+<div class="grid grid-cols-1 md:grid-cols-3 gap-4 font-mono text-xs">
+<div class="p-4 rounded border border-brand-border bg-brand-card flex flex-col gap-2">
+<span class="text-brand-accent font-semibold">DEFENSIVE</span>
+<span class="text-brand-white">Threat Modeling &amp; Pen Testing</span>
+</div>
+<div class="p-4 rounded border border-brand-border bg-brand-card flex flex-col gap-2">
+<span class="text-brand-white font-semibold">INTERFACE</span>
+<span class="text-brand-white">UI/UX Design Systems &amp; Wireframing</span>
+</div>
+<div class="p-4 rounded border border-brand-border bg-brand-card flex flex-col gap-2">
+<span class="text-brand-accent font-semibold">ARCHITECT</span>
+<span class="text-brand-white">Zero Trust Architecture &amp; Cryptography</span>
+</div>
+</div>
+<!-- Standards Badges -->
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+<div class="p-5 rounded border border-brand-border bg-brand-card flex items-center justify-between">
+<div>
+<span class="font-mono text-xs text-brand-accent block mb-1">AUDITING STANDARD</span>
+<span class="font-grotesk text-lg font-semibold text-brand-white">OWASP Top 10</span>
+<span class="text-xs text-brand-muted block mt-0.5">Proactive Defenses &amp; Auditing</span>
+</div>
+<svg class="w-6 h-6 text-brand-muted" fill="none" stroke="currentColor" stroke-width="1.5" viewbox="0 0 24 24">
+<path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+</svg>
+</div>
+<div class="p-5 rounded border border-brand-border bg-brand-card flex items-center justify-between">
+<div>
+<span class="font-mono text-xs text-brand-white block mb-1">ERGONOMIC SPEC</span>
+<span class="font-grotesk text-lg font-semibold text-brand-white">WCAG AAA &amp; UX</span>
+<span class="text-xs text-brand-muted block mt-0.5">Human-Centered Interactions</span>
+</div>
+<svg class="w-6 h-6 text-brand-muted" fill="none" stroke="currentColor" stroke-width="1.5" viewbox="0 0 24 24">
+<circle cx="12" cy="12" r="10"></circle>
+<line x1="12" x2="12" y1="8" y2="12"></line>
+<line x1="12" x2="12.01" y1="16" y2="16"></line>
+</svg>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- 02 CAPABILITIES / STACK SECTION (Editorial Data Table Layout) -->
+<section class="max-w-[1200px] mx-auto px-6 py-24 border-b border-brand-subtleBorder" id="skills">
+<div class="flex flex-col md:flex-row md:items-end justify-between mb-16 pb-6 border-b border-brand-subtleBorder gap-6">
+<div>
+<span class="font-mono text-xs text-brand-accent tracking-widest uppercase block mb-3">02 // Technical Capabilities</span>
+<h2 class="font-syne text-3xl md:text-4xl font-bold text-brand-white tracking-tight">Cyber Security &amp; UI/UX Stack</h2>
+</div>
+<p class="text-brand-muted text-sm font-mono max-w-sm">
+          // Dual-domain disciplines: hardened defensive computing meets precise visual ergonomics.
+        </p>
+</div>
+<!-- Architectural Split List Table -->
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16">
+<!-- Column 1: Cyber Security -->
+<div class="flex flex-col">
+<div class="flex items-center justify-between pb-4 mb-4 border-b border-brand-border font-mono text-xs">
+<span class="text-brand-white uppercase font-bold tracking-wider flex items-center gap-2">
+<svg class="w-4 h-4 text-brand-accent" fill="none" stroke="currentColor" stroke-width="1.75" viewbox="0 0 24 24">
+<rect height="11" rx="2" ry="2" width="18" x="3" y="11"></rect>
+<path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
+</svg>
+              Cyber Security
+            </span>
+<span class="text-brand-accent">[DEFENSIVE / PENTEST]</span>
+</div>
+<div class="divide-y divide-brand-subtleBorder">
+<div class="py-4 flex items-center justify-between hover:bg-brand-card/40 px-2 transition-colors">
+<div class="flex flex-col">
+<span class="font-grotesk text-base text-brand-white font-medium">Penetration Testing</span>
+<span class="font-mono text-xs text-brand-muted">Target enumeration &amp; exploitation vectors</span>
+</div>
+<span class="font-mono text-xs px-2.5 py-1 rounded bg-brand-card border border-brand-border text-brand-accent">Burp / Kali</span>
+</div>
+<div class="py-4 flex items-center justify-between hover:bg-brand-card/40 px-2 transition-colors">
+<div class="flex flex-col">
+<span class="font-grotesk text-base text-brand-white font-medium">Network Security</span>
+<span class="font-mono text-xs text-brand-muted">Packet inspection, topology &amp; sniffing</span>
+</div>
+<span class="font-mono text-xs px-2.5 py-1 rounded bg-brand-card border border-brand-border text-brand-accent">Wireshark / nmap</span>
+</div>
+<div class="py-4 flex items-center justify-between hover:bg-brand-card/40 px-2 transition-colors">
+<div class="flex flex-col">
+<span class="font-grotesk text-base text-brand-white font-medium">Cryptography</span>
+<span class="font-mono text-xs text-brand-muted">Asymmetric keys, handshakes &amp; block ciphers</span>
+</div>
+<span class="font-mono text-xs px-2.5 py-1 rounded bg-brand-card border border-brand-border text-brand-accent">AES / RSA / TLS</span>
+</div>
+<div class="py-4 flex items-center justify-between hover:bg-brand-card/40 px-2 transition-colors">
+<div class="flex flex-col">
+<span class="font-grotesk text-base text-brand-white font-medium">Vulnerability Assessment</span>
+<span class="font-mono text-xs text-brand-muted">Automated scanning &amp; manual triage</span>
+</div>
+<span class="font-mono text-xs px-2.5 py-1 rounded bg-brand-card border border-brand-border text-brand-muted">OWASP ZAP</span>
+</div>
+<div class="py-4 flex items-center justify-between hover:bg-brand-card/40 px-2 transition-colors">
+<div class="flex flex-col">
+<span class="font-grotesk text-base text-brand-white font-medium">Zero Trust &amp; IAM</span>
+<span class="font-mono text-xs text-brand-muted">Identity perimeter &amp; tokenized verification</span>
+</div>
+<span class="font-mono text-xs px-2.5 py-1 rounded bg-brand-card border border-brand-border text-brand-muted">mTLS / OAuth2</span>
+</div>
+</div>
+</div>
+<!-- Column 2: UI/UX Design -->
+<div class="flex flex-col">
+<div class="flex items-center justify-between pb-4 mb-4 border-b border-brand-border font-mono text-xs">
+<span class="text-brand-white uppercase font-bold tracking-wider flex items-center gap-2">
+<svg class="w-4 h-4 text-brand-white" fill="none" stroke="currentColor" stroke-width="1.75" viewbox="0 0 24 24">
+<polygon points="12 2 2 7 12 12 22 7 12 2"></polygon>
+<polyline points="2 17 12 22 22 17"></polyline>
+<polyline points="2 12 12 17 22 12"></polyline>
+</svg>
+              UI/UX Design
+            </span>
+<span class="text-brand-muted">[SYSTEMS &amp; ERGONOMICS]</span>
+</div>
+<div class="divide-y divide-brand-subtleBorder">
+<div class="py-4 flex items-center justify-between hover:bg-brand-card/40 px-2 transition-colors">
+<div class="flex flex-col">
+<span class="font-grotesk text-base text-brand-white font-medium">Figma &amp; Tokens</span>
+<span class="font-mono text-xs text-brand-muted">Design variables, dynamic scaling &amp; layouts</span>
+</div>
+<span class="font-mono text-xs px-2.5 py-1 rounded bg-brand-card border border-brand-border text-brand-white">Auto Layout</span>
+</div>
+<div class="py-4 flex items-center justify-between hover:bg-brand-card/40 px-2 transition-colors">
+<div class="flex flex-col">
+<span class="font-grotesk text-base text-brand-white font-medium">Wireframing &amp; Prototyping</span>
+<span class="font-mono text-xs text-brand-muted">Rapid architectural flows &amp; user tests</span>
+</div>
+<span class="font-mono text-xs px-2.5 py-1 rounded bg-brand-card border border-brand-border text-brand-white">Interactive</span>
+</div>
+<div class="py-4 flex items-center justify-between hover:bg-brand-card/40 px-2 transition-colors">
+<div class="flex flex-col">
+<span class="font-grotesk text-base text-brand-white font-medium">Design Systems</span>
+<span class="font-mono text-xs text-brand-muted">Reusable component architectures</span>
+</div>
+<span class="font-mono text-xs px-2.5 py-1 rounded bg-brand-card border border-brand-border text-brand-white">Atomic UI</span>
+</div>
+<div class="py-4 flex items-center justify-between hover:bg-brand-card/40 px-2 transition-colors">
+<div class="flex flex-col">
+<span class="font-grotesk text-base text-brand-white font-medium">User Research &amp; Journeys</span>
+<span class="font-mono text-xs text-brand-muted">Cognitive friction reduction</span>
+</div>
+<span class="font-mono text-xs px-2.5 py-1 rounded bg-brand-card border border-brand-border text-brand-muted">Personas</span>
+</div>
+<div class="py-4 flex items-center justify-between hover:bg-brand-card/40 px-2 transition-colors">
+<div class="flex flex-col">
+<span class="font-grotesk text-base text-brand-white font-medium">Accessibility (a11y)</span>
+<span class="font-mono text-xs text-brand-muted">Contrast ratios, keyboard nav &amp; screen readers</span>
+</div>
+<span class="font-mono text-xs px-2.5 py-1 rounded bg-brand-card border border-brand-border text-brand-muted">WCAG AAA</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- 03 SELECTED WORK: Handcrafted Editorial Case -->
+<section class="max-w-[1200px] mx-auto px-6 py-24 border-b border-brand-subtleBorder" id="projects">
+<div class="flex flex-col md:flex-row md:items-end justify-between mb-8 gap-4">
+<div>
+<span class="font-mono text-xs text-brand-accent tracking-widest uppercase block mb-3">03 // Selected Work</span>
+<h2 class="font-syne text-3xl md:text-4xl font-bold text-brand-white tracking-tight">Security &amp; UX Projects</h2>
+</div>
+<span class="font-mono text-xs text-brand-muted" id="artifact-count-display">[FEATURED ARTIFACT: 01 OF 01]</span>
+</div>
+<!-- Terminal Interactive Filter Tabs -->
+<div class="mb-8 p-2 rounded border border-brand-border bg-brand-card/90 flex flex-wrap items-center justify-between gap-3 font-mono text-xs">
+<div class="flex items-center gap-2 text-brand-muted text-[11px] px-2 py-1">
+<span class="inline-block w-2 h-2 rounded-full bg-brand-accent animate-ping"></span>
+<span class="text-brand-white font-semibold">$ filter</span>
+<span class="text-brand-muted">--catalog</span>
+</div>
+<div class="flex flex-wrap items-center gap-2" id="project-filter-tabs">
+<button class="filter-tab-btn flex items-center gap-2 px-3 py-1.5 rounded border border-brand-accent text-brand-accent bg-brand-accentMuted font-mono text-xs tracking-wider transition-all shadow-[0_0_12px_rgba(34,197,94,0.15)]" data-cat="all">
+<span class="tab-indicator font-bold">&gt;</span>
+<span>[01 // ALL_ARTIFACTS]</span>
+<span class="text-[10px] px-1.5 py-0.2 rounded bg-brand-accent/20 border border-brand-accent/40 font-semibold">01</span>
+</button>
+<button class="filter-tab-btn flex items-center gap-2 px-3 py-1.5 rounded border border-transparent text-zinc-400 hover:text-brand-white hover:border-brand-border hover:bg-brand-darker font-mono text-xs tracking-wider transition-all" data-cat="sec">
+<span class="tab-indicator opacity-0 font-bold">&gt;</span>
+<span>[02 // SEC_DEFENSE]</span>
+<span class="text-[10px] px-1.5 py-0.2 rounded bg-brand-border/60 text-zinc-400">01</span>
+</button>
+<button class="filter-tab-btn flex items-center gap-2 px-3 py-1.5 rounded border border-transparent text-zinc-400 hover:text-brand-white hover:border-brand-border hover:bg-brand-darker font-mono text-xs tracking-wider transition-all" data-cat="uiux">
+<span class="tab-indicator opacity-0 font-bold">&gt;</span>
+<span>[03 // UI_UX_SYSTEMS]</span>
+<span class="text-[10px] px-1.5 py-0.2 rounded bg-brand-border/60 text-zinc-400">00</span>
+</button>
+<button class="filter-tab-btn flex items-center gap-2 px-3 py-1.5 rounded border border-transparent text-zinc-400 hover:text-brand-white hover:border-brand-border hover:bg-brand-darker font-mono text-xs tracking-wider transition-all" data-cat="audit">
+<span class="tab-indicator opacity-0 font-bold">&gt;</span>
+<span>[04 // AUDITS_RESEARCH]</span>
+<span class="text-[10px] px-1.5 py-0.2 rounded bg-brand-border/60 text-zinc-400">00</span>
+</button>
+</div>
+</div>
+<!-- Featured Project Container (SEC_DEFENSE) -->
+<div class="rounded border border-brand-border bg-brand-card overflow-hidden transition-all duration-300" id="project-shield-card">
+<div class="grid grid-cols-1 lg:grid-cols-12">
+<!-- Code & Runtime Terminal View -->
+<div class="lg:col-span-7 bg-brand-darker p-6 md:p-8 border-b lg:border-b-0 lg:border-r border-brand-border flex flex-col justify-between font-mono">
+<div>
+<!-- Terminal Header -->
+<div class="flex items-center justify-between pb-4 mb-6 border-b border-brand-subtleBorder">
+<div class="flex items-center gap-2">
+<span class="w-2.5 h-2.5 rounded-full bg-zinc-700"></span>
+<span class="w-2.5 h-2.5 rounded-full bg-zinc-700"></span>
+<span class="w-2.5 h-2.5 rounded-full bg-zinc-700"></span>
+<span class="text-xs text-brand-muted ml-2">shield.guard.runtime</span>
+</div>
+<span class="text-[11px] text-brand-accent px-2 py-0.5 rounded bg-brand-accentMuted border border-brand-accentBorder">
+                  luau:runtime.shield.guard
+                </span>
+</div>
+<!-- Terminal Code Block -->
+<div class="space-y-2 text-xs leading-relaxed">
+<p class="text-brand-muted">// Initializing core memory defense matrix</p>
+<p class="text-brand-white">
+<span class="text-brand-accent">local</span> Shield = <span class="text-amber-300">require</span>(ReplicatedStorage.Security.Shield)
+                </p>
+<p class="text-brand-white">
+                  Shield:<span class="text-emerald-400">EnforceTamperDetection</span>({ 
+                  <span class="text-brand-muted">hookChecks</span> = <span class="text-amber-300">true</span>, 
+                  <span class="text-brand-muted">integrityAudit</span> = <span class="text-amber-300">true</span> 
+                  })
+                </p>
+<div class="mt-4 pt-3 border-t border-brand-subtleBorder text-emerald-400 flex items-center gap-2">
+<span class="w-1.5 h-1.5 rounded-full bg-brand-accent"></span>
+<span>[SEC-GUARD] Memory injection neutralized</span>
+</div>
+</div>
+</div>
+<!-- Terminal Footnote -->
+<div class="flex items-center justify-between pt-8 text-[11px] text-brand-muted border-t border-brand-subtleBorder mt-8">
+<span>Game Engine Security</span>
+<span class="text-brand-accent font-medium">Anti-Tamper Active</span>
+</div>
+</div>
+<!-- Project Metadata & Synopsis -->
+<div class="lg:col-span-5 p-6 md:p-8 flex flex-col justify-between">
+<div>
+<div class="flex items-center gap-4 mb-6">
+<!-- Shield Logo Asset -->
+<div class="w-14 h-14 rounded border border-brand-border bg-brand-darker flex items-center justify-center p-1.5 flex-shrink-0">
+<img alt="Shield Logo" class="w-full h-full object-contain" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCYzcXdU4JB27ONd1v4XLrg3NODCJhe7WQ0h1vhVIFqn_NbjaaD2UKQKaiVWnxjIuNe7POrrksFJFdY6Wdk9J7S101VTI2uuWbftCR0qCfVu1cKRN16Kj_kIFUc_fbUv7m_U7kuDDWKRoAZ8yR-8UeJehH2Mqls4bEYzE_nf5cIbPbU2pDYOiKigUfX2sKsWMuP317oBvjwwSoIomsuREFZbloOkxoLjsN8LGyJtJHyC9kus1O7CAdiPwRBpRnZv8bLPQ"/>
+</div>
+<div>
+<h3 class="font-syne text-2xl font-bold text-brand-white">Roblox Script (Shield)</h3>
+<span class="font-mono text-xs text-brand-muted">Memory &amp; Client Integrity</span>
+</div>
+</div>
+<p class="text-brand-muted text-sm leading-relaxed mb-6 font-light">
+                Advanced security and memory integrity defense script engineered for Roblox environments. Protects game state against unauthorized client-side memory tampering, remote hook injections, and exploit execution.
+              </p>
+<!-- Tags -->
+<div class="flex flex-wrap gap-2 mb-8 font-mono text-[11px]">
+<span class="px-2.5 py-1 rounded bg-brand-accentMuted border border-brand-accentBorder text-brand-accent">Luau</span>
+<span class="px-2.5 py-1 rounded bg-brand-darker border border-brand-border text-brand-muted">Reverse Engineering</span>
+<span class="px-2.5 py-1 rounded bg-brand-darker border border-brand-border text-brand-muted">Anti-Tamper</span>
+<span class="px-2.5 py-1 rounded bg-brand-darker border border-brand-border text-brand-muted">Memory Integrity</span>
+</div>
+</div>
+<!-- Outbound Action -->
+<a class="group flex items-center justify-between pt-4 border-t border-brand-subtleBorder text-brand-white hover:text-brand-accent font-mono text-xs transition-colors" href="https://discord.gg/cWqzRPCaG7" rel="noopener noreferrer" target="_blank">
+<span class="flex items-center gap-2">
+<svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="1.5" viewbox="0 0 24 24">
+<path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
+</svg>
+<span>Join Discord Server — discord.gg/cWqzRPCaG7</span>
+</span>
+<svg class="w-4 h-4 transform group-hover:translate-x-1 group-hover:-translate-y-0.5 transition-transform" fill="none" stroke="currentColor" stroke-width="1.75" viewbox="0 0 24 24">
+<line x1="7" x2="17" y1="17" y2="7"></line>
+<polyline points="7 7 17 7 17 17"></polyline>
+</svg>
+</a>
+</div>
+</div>
+</div>
+<!-- Empty State Terminal Output for other categories -->
+<div class="hidden rounded border border-brand-border bg-brand-card p-8 md:p-12 font-mono" id="project-empty-state">
+<div class="flex items-center gap-2 pb-4 mb-6 border-b border-brand-subtleBorder text-xs text-brand-muted">
+<span class="w-2.5 h-2.5 rounded-full bg-amber-500/80"></span>
+<span class="text-zinc-300">feath@terminal:~/projects</span>
+<span class="ml-auto text-brand-accent text-[11px]">[QUERY EXECUTED]</span>
+</div>
+<div class="space-y-3 text-xs leading-relaxed">
+<p class="text-zinc-400">
+<span class="text-brand-accent font-bold">&gt;</span> <span id="terminal-empty-query">sec-filter --category=ui_ux_systems</span>
+</p>
+<p class="text-amber-300/90 flex items-center gap-2">
+<span class="inline-block w-1.5 h-1.5 rounded-full bg-amber-400"></span>
+<span>[STAGED_ARTIFACT] 0 public items returned for active query filter.</span>
+</p>
+<p class="text-brand-muted max-w-xl">
+      High-fidelity design system tokens, wireframing repositories, and penetration audit case logs are currently under client embargo &amp; undergoing v2 anonymization pipeline.
+    </p>
+<div class="pt-4 mt-4 border-t border-brand-subtleBorder flex items-center gap-3">
+<span class="text-brand-accent animate-pulse font-bold">&gt;</span>
+<span class="text-brand-white">Standing by for next deployment batch...</span>
+<span class="w-2 h-4 bg-brand-accent inline-block animate-pulse ml-1"></span>
+</div>
+</div>
+</div>
+</section>
+<!-- 04 LEARNING JOURNEY -->
+<section class="max-w-[1200px] mx-auto px-6 py-24 border-b border-brand-subtleBorder" id="experience">
+<div class="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-4">
+<div>
+<span class="font-mono text-xs text-brand-accent tracking-widest uppercase block mb-3">04 // Continuous Research</span>
+<h2 class="font-syne text-3xl md:text-4xl font-bold text-brand-white tracking-tight">Learning &amp; Education</h2>
+</div>
+<span class="font-mono text-xs text-brand-muted">[CHRONOLOGY]</span>
+</div>
+<!-- Architectural Timeline Card -->
+<div class="rounded border border-brand-border bg-brand-card p-6 md:p-8">
+<div class="flex flex-col md:flex-row md:items-center justify-between pb-6 mb-6 border-b border-brand-subtleBorder gap-4">
+<div class="flex items-center gap-3">
+<span class="w-2 h-2 rounded-full bg-brand-accent"></span>
+<h3 class="font-grotesk text-xl font-bold text-brand-white">Independent Learner &amp; Researcher</h3>
+<span class="text-brand-muted hidden sm:inline">•</span>
+<span class="font-mono text-xs text-brand-accent">Cyber Security &amp; UI/UX</span>
+</div>
+<span class="font-mono text-xs px-3 py-1 rounded bg-brand-darker border border-brand-border text-brand-muted self-start md:self-auto">
+            2025 — Present
+          </span>
+</div>
+<p class="text-brand-muted text-base leading-relaxed font-light max-w-4xl">
+          Engaging in self-directed cybersecurity labs, hands-on CTFs, and offensive/defensive vulnerability research. Actively prototyping modern responsive interfaces in Figma and architecting tokenized, accessible design systems codebases in React and Tailwind.
+        </p>
+</div>
+</section>
+<!-- 05 CONTACT & CHANNELS -->
+<section class="max-w-[1200px] mx-auto px-6 py-24" id="contact">
+<div class="text-left mb-16">
+<span class="font-mono text-xs text-brand-accent tracking-widest uppercase block mb-3">05 // Transmission Channels</span>
+<h2 class="font-syne text-3xl md:text-5xl font-bold text-brand-white tracking-tight mb-4">
+          Let's Build Something Fortified &amp; Beautiful
+        </h2>
+<p class="text-brand-muted text-base md:text-lg font-light max-w-xl">
+          Interested in security audits, UI/UX design partnerships, or engineering consultation? My secure communications and social channels are open.
+        </p>
+</div>
+<!-- Direct Channels Matrix -->
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-px bg-brand-border rounded border border-brand-border overflow-hidden mb-12">
+<!-- GitHub -->
+<a class="bg-brand-card hover:bg-brand-cardHover p-6 flex flex-col justify-between group transition-colors" href="https://github.com/feath41" rel="noopener noreferrer" target="_blank">
+<div class="flex items-center justify-between mb-8">
+<svg class="w-5 h-5 text-brand-muted group-hover:text-brand-accent transition-colors" fill="none" stroke="currentColor" stroke-width="1.5" viewbox="0 0 24 24">
+<path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
+</svg>
+<svg class="w-3.5 h-3.5 text-brand-muted group-hover:text-brand-white transition-colors" fill="none" stroke="currentColor" stroke-width="1.75" viewbox="0 0 24 24">
+<line x1="7" x2="17" y1="17" y2="7"></line>
+<polyline points="7 7 17 7 17 17"></polyline>
+</svg>
+</div>
+<div>
+<span class="font-grotesk text-base font-semibold text-brand-white block">GitHub</span>
+<span class="font-mono text-xs text-brand-accent">@feath41</span>
+</div>
+</a>
+<!-- Discord -->
+<a class="bg-brand-card hover:bg-brand-cardHover p-6 flex flex-col justify-between group transition-colors" href="https://discord.com/users/1452943274678419490" rel="noopener noreferrer" target="_blank">
+<div class="flex items-center justify-between mb-8">
+<svg class="w-5 h-5 text-brand-muted group-hover:text-brand-accent transition-colors" fill="none" stroke="currentColor" stroke-width="1.5" viewbox="0 0 24 24">
+<path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
+</svg>
+<svg class="w-3.5 h-3.5 text-brand-muted group-hover:text-brand-white transition-colors" fill="none" stroke="currentColor" stroke-width="1.75" viewbox="0 0 24 24">
+<line x1="7" x2="17" y1="17" y2="7"></line>
+<polyline points="7 7 17 7 17 17"></polyline>
+</svg>
+</div>
+<div>
+<span class="font-grotesk text-base font-semibold text-brand-white block">Discord</span>
+<span class="font-mono text-xs text-brand-white">feath</span>
+</div>
+</a>
+<!-- WhatsApp -->
+<a class="bg-brand-card hover:bg-brand-cardHover p-6 flex flex-col justify-between group transition-colors" href="https://wa.me/6285284429139" rel="noopener noreferrer" target="_blank">
+<div class="flex items-center justify-between mb-8">
+<svg class="w-5 h-5 text-brand-muted group-hover:text-brand-accent transition-colors" fill="none" stroke="currentColor" stroke-width="1.5" viewbox="0 0 24 24">
+<path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+</svg>
+<svg class="w-3.5 h-3.5 text-brand-muted group-hover:text-brand-white transition-colors" fill="none" stroke="currentColor" stroke-width="1.75" viewbox="0 0 24 24">
+<line x1="7" x2="17" y1="17" y2="7"></line>
+<polyline points="7 7 17 7 17 17"></polyline>
+</svg>
+</div>
+<div>
+<span class="font-grotesk text-base font-semibold text-brand-white block">WhatsApp</span>
+<span class="font-mono text-xs text-brand-muted">+62 852-8442-9139</span>
+</div>
+</a>
+<!-- Instagram -->
+<a class="bg-brand-card hover:bg-brand-cardHover p-6 flex flex-col justify-between group transition-colors" href="https://www.instagram.com/dikzmi?stkn=MTZlMTVzdmdmZ2w2OQ==" rel="noopener noreferrer" target="_blank">
+<div class="flex items-center justify-between mb-8">
+<svg class="w-5 h-5 text-brand-muted group-hover:text-brand-accent transition-colors" fill="none" stroke="currentColor" stroke-width="1.5" viewbox="0 0 24 24">
+<rect height="20" rx="5" ry="5" width="20" x="2" y="2"></rect>
+<path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+<line x1="17.5" x2="17.51" y1="6.5" y2="6.5"></line>
+</svg>
+<svg class="w-3.5 h-3.5 text-brand-muted group-hover:text-brand-white transition-colors" fill="none" stroke="currentColor" stroke-width="1.75" viewbox="0 0 24 24">
+<line x1="7" x2="17" y1="17" y2="7"></line>
+<polyline points="7 7 17 7 17 17"></polyline>
+</svg>
+</div>
+<div>
+<span class="font-grotesk text-base font-semibold text-brand-white block">Instagram</span>
+<span class="font-mono text-xs text-brand-muted">@dikzmi</span>
+</div>
+</a>
+<!-- Direct Copy Email -->
+<button class="bg-brand-card hover:bg-brand-cardHover p-6 flex flex-col justify-between group transition-colors text-left cursor-pointer" id="copy-email-btn">
+<div class="flex items-center justify-between mb-8">
+<svg class="w-5 h-5 text-brand-muted group-hover:text-brand-accent transition-colors" fill="none" id="copy-email-svg" stroke="currentColor" stroke-width="1.5" viewbox="0 0 24 24">
+<rect height="13" rx="2" ry="2" width="13" x="9" y="9"></rect>
+<path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+</svg>
+<span class="font-mono text-[10px] text-brand-muted uppercase">COPY</span>
+</div>
+<div>
+<span class="font-grotesk text-base font-semibold text-brand-white block">Direct Email</span>
+<span class="font-mono text-xs text-brand-accent truncate block max-w-full" id="copy-email-label">dipoarya25@gmail.com</span>
+</div>
+</button>
+</div>
+<!-- Action Footer -->
+<div class="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 pt-6">
+<a class="inline-flex items-center gap-2.5 px-6 py-3 rounded bg-brand-accent hover:bg-green-400 text-black font-mono text-xs font-semibold uppercase tracking-wider transition-colors" href="mailto:dipoarya25@gmail.com">
+<span>Send an Email</span>
+<svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24">
+<line x1="22" x2="11" y1="2" y2="13"></line>
+<polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
+</svg>
+</a>
+<span class="font-mono text-xs text-brand-muted">PGP key available upon request // Quick turnaround</span>
+</div>
+</section>
+</main>
+<!-- EDITORIAL FOOTER -->
+<footer class="w-full border-t border-brand-subtleBorder py-12 bg-brand-darker">
+<div class="max-w-[1200px] mx-auto px-6 flex flex-col md:flex-row items-start md:items-center justify-between gap-6 font-mono text-xs">
+<div class="flex flex-col sm:flex-row sm:items-center gap-2 sm:gap-6 text-brand-muted">
+<span>© 2025 Feath. Fortified &amp; crafted with architectural clarity.</span>
+<span class="text-brand-accent">// All systems secured</span>
+</div>
+<a class="inline-flex items-center gap-2 text-brand-muted hover:text-brand-white transition-colors scroll-trigger" data-target="main" href="#top">
+<span>Back to top</span>
+<svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24">
+<line x1="12" x2="12" y1="19" y2="5"></line>
+<polyline points="5 12 12 5 19 12"></polyline>
+</svg>
+</a>
+</div>
+</footer>
+<script>
+    (function() {
+      // Copy email handling
+      const copyBtn = document.getElementById('copy-email-btn');
+      const copyLabel = document.getElementById('copy-email-label');
+      if (copyBtn && copyLabel) {
+        copyBtn.addEventListener('click', async () => {
+          const email = 'dipoarya25@gmail.com';
+          try {
+            if (navigator.clipboard) {
+              await navigator.clipboard.writeText(email);
+            }
+            const original = copyLabel.textContent;
+            copyLabel.textContent = '[COPIED TO CLIPBOARD]';
+            setTimeout(() => {
+              copyLabel.textContent = original;
+            }, 2000);
+          } catch (e) {
+            window.location.href = 'mailto:' + email;
+          }
+        });
+      }
+
+      // Interactive Terminal Filter Tabs
+      const filterTabs = document.querySelectorAll('.filter-tab-btn');
+      const shieldCard = document.getElementById('project-shield-card');
+      const emptyState = document.getElementById('project-empty-state');
+      const emptyQuery = document.getElementById('terminal-empty-query');
+      const countDisplay = document.getElementById('artifact-count-display');
+
+      if (filterTabs.length > 0) {
+        filterTabs.forEach(tab => {
+          tab.addEventListener('click', () => {
+            const cat = tab.getAttribute('data-cat');
+            filterTabs.forEach(t => {
+              t.className = 'filter-tab-btn flex items-center gap-2 px-3 py-1.5 rounded border border-transparent text-zinc-400 hover:text-brand-white hover:border-brand-border hover:bg-brand-darker font-mono text-xs tracking-wider transition-all';
+              const ind = t.querySelector('.tab-indicator');
+              if (ind) ind.classList.add('opacity-0');
+            });
+            tab.className = 'filter-tab-btn flex items-center gap-2 px-3 py-1.5 rounded border border-brand-accent text-brand-accent bg-brand-accentMuted font-mono text-xs tracking-wider transition-all shadow-[0_0_12px_rgba(34,197,94,0.15)]';
+            const activeIndicator = tab.querySelector('.tab-indicator');
+            if (activeIndicator) activeIndicator.classList.remove('opacity-0');
+            if (cat === 'all' || cat === 'sec') {
+              shieldCard.classList.remove('hidden');
+              emptyState.classList.add('hidden');
+              if (countDisplay) countDisplay.textContent = '[FEATURED ARTIFACT: 01 OF 01]';
+            } else {
+              shieldCard.classList.add('hidden');
+              emptyState.classList.remove('hidden');
+              if (countDisplay) countDisplay.textContent = '[STAGED ARTIFACTS: 00 OF 00]';
+              if (emptyQuery) {
+                const queryName = cat === 'uiux' ? 'ui_ux_systems' : 'audits_research';
+                emptyQuery.textContent = 'sec-filter --category=' + queryName + ' --depth=strict';
+              }
+            }
+          });
+        });
+      }
+    })();
+</script>
+<!-- Smooth Scroll for Anchor Links -->
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const scrollTriggers = document.querySelectorAll('.scroll-trigger');
+      scrollTriggers.forEach(function(link) {
+        link.addEventListener('click', function(e) {
+          e.preventDefault();
+          const targetSelector = this.getAttribute('data-target') || this.getAttribute('href');
+          const target = document.querySelector(targetSelector);
+          if (target) {
+            const startPosition = window.pageYOffset;
+            const targetPosition = target.getBoundingClientRect().top + startPosition;
+            const distance = targetPosition - startPosition;
+            const duration = 900;
+            function easeInOutCubic(t, b, c, d) {
+              t /= d / 2;
+              if (t < 1) return c / 2 * t * t * t + b;
+              t -= 2;
+              return -c / 2 * (t * t * t - 2) + b;
+            }
+            const startTime = performance.now();
+            function step(currentTime) {
+              const elapsed = currentTime - startTime;
+              const run = easeInOutCubic(elapsed, startPosition, distance, duration);
+              window.scrollTo(0, run);
+              if (elapsed < duration) requestAnimationFrame(step);
+            }
+            requestAnimationFrame(step);
+          }
+        });
+      });
+    });
+</script>
+</body></html>
